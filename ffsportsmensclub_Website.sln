@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ffsportsmensclub_Website", "ffsportsmensclub_Website\ffsportsmensclub_Website.csproj", "{3992F71E-CE17-4B2D-AE00-552ECF57BB8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ffsportsmensclub_Website.Tests", "ffsportsmensclub_Website.Tests\ffsportsmensclub_Website.Tests.csproj", "{2B4C3940-25A4-4EC6-8664-D89DBEC5F5ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3992F71E-CE17-4B2D-AE00-552ECF57BB8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3992F71E-CE17-4B2D-AE00-552ECF57BB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3992F71E-CE17-4B2D-AE00-552ECF57BB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3992F71E-CE17-4B2D-AE00-552ECF57BB8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4C3940-25A4-4EC6-8664-D89DBEC5F5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4C3940-25A4-4EC6-8664-D89DBEC5F5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4C3940-25A4-4EC6-8664-D89DBEC5F5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4C3940-25A4-4EC6-8664-D89DBEC5F5ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
