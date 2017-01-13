@@ -4,7 +4,7 @@
 
     <div class="jumbotron">
         <h1>Fort Frances Men&#39;s Club</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+        <p class="lead">This is the website for the Outdoorsmen's Club. We have a variety of activities for people of all ages. Keep reading to learn more!</p>
         <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
 
