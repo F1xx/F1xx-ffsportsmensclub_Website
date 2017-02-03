@@ -211,6 +211,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\grandad1.JPG" />
+    <Content Include="Images\grandad2.jpg" />
+    <Content Include="Images\grandad3.jpg" />
+    <Content Include="Images\grandad4.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
