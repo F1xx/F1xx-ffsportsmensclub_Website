@@ -30,8 +30,11 @@
         </div>
     </div>
 
+    <div class="well">Recent Activities</div>
+
     <div class="row">
         <div class="col-md-3">
+            <img src="Images/grandad1.JPG" class="img-responsive" alt="Image showcasing a classroom outdoors" />
             <h2>Classroom adventures</h2>
             <p>
                 ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
@@ -42,6 +45,7 @@
             </p>
         </div>
         <div class="col-md-3">
+            <img src="Images/grandad2.jpg" class="img-responsive" alt="Image showcasing more stuff" />
             <h2>Get more libraries</h2>
             <p>
                 NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
@@ -51,6 +55,7 @@
             </p>
         </div>
         <div class="col-md-3">
+            <img src="Images/grandad3.jpg" class="img-responsive" alt="Image showcasing hunting" />
             <h2>Web Hosting</h2>
             <p>
                 You can easily find a web hosting company that offers the right mix of features and price for your applications.
@@ -60,6 +65,7 @@
             </p>
         </div>
         <div class="col-md-3">
+            <img src="Images/grandad4.jpg" class="img-responsive" alt="Image showcasing a tree" />
             <h2>Web Hosting</h2>
             <p>
                 You can easily find a web hosting company that offers the right mix of features and price for your applications.
