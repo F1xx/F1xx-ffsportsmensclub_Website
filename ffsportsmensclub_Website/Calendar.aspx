@@ -15,20 +15,26 @@
 
     <div>
     <div class="col-md-12"> <!-- CALENDAR -->
+
+        <!--TEXTBOXES-->
             <b>Event ID:</b><br />
             <asp:TextBox ID="txtEventID" runat="server"></asp:TextBox><br />
 
             <b>Event Date:</b><br />
-            <asp:TextBox ID="txtDate" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="txtDate" runat="server" ReadOnly="True"></asp:TextBox><br />
 
             <b>Event Title:</b><br />
             <asp:TextBox ID="txtEvent" runat="server"></asp:TextBox><br />
 
             <b>Event Description:</b><br />
             <asp:TextBox ID="txtEventDescription" runat="server"></asp:TextBox><br />
- 
+
             <asp:Button ID="cmdCreate" runat="server" Text="Create Event" onclick="cmdCreate_Click" /><br />
+        <!--/TEXTBOXES-->
+
+        <!--ACTUAL CALENDAR-->
             <asp:Calendar ID="cldrEventCalendar" runat="server" Height="300px" ondayrender="cldrEventCalendar_DayRender" Width="700px"></asp:Calendar>
+        <!--/ACTUAL CALENDAR-->
         </div>
     </div>
 </asp:Content>
