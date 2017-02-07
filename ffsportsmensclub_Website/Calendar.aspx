@@ -14,8 +14,21 @@
     </div>
 
     <div>
-    <div class="col-md-12">
-            <h2>Put the calendar in here</h2>
+    <div class="col-md-12"> <!-- CALENDAR -->
+            <b>Event ID:</b><br />
+            <asp:TextBox ID="txtEventID" runat="server"></asp:TextBox><br />
+
+            <b>Event Date:</b><br />
+            <asp:TextBox ID="txtDate" runat="server"></asp:TextBox><br />
+
+            <b>Event Title:</b><br />
+            <asp:TextBox ID="txtEvent" runat="server"></asp:TextBox><br />
+
+            <b>Event Description:</b><br />
+            <asp:TextBox ID="txtEventDescription" runat="server"></asp:TextBox><br />
+ 
+            <asp:Button ID="cmdCreate" runat="server" Text="Create Event" onclick="cmdCreate_Click" /><br />
+            <asp:Calendar ID="cldrEventCalendar" runat="server" Height="300px" ondayrender="cldrEventCalendar_DayRender" Width="700px"></asp:Calendar>
         </div>
     </div>
 </asp:Content>
