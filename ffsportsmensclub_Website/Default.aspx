@@ -1,13 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ffsportsmensclub_Website._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="jumbotron">
-        <h1>Fort Frances Men&#39;s Club</h1>
-        <p class="lead">This is the website for the Outdoorsmen's Club. We have a variety of activities for people of all ages. Keep reading to learn more!</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
+    <div class="container">
     <div class="row">
         <div class="col-md-6">
             <h2>The club you have been looking for!</h2>
@@ -29,9 +23,15 @@
             </p>
         </div>
     </div>
+        </div>
 
-    <div class="well">Recent Activities</div>
+    <div class="container">
+        <div class="page-header">
+            Recent Activities
+        </div>
+    </div>
 
+    <div class="container">
     <div class="row">
         <div class="col-md-3">
             <img src="Images/grandad1.JPG" class="img-responsive" alt="Image showcasing a classroom outdoors" />
@@ -75,7 +75,9 @@
             </p>
         </div>
     </div>
+        </div>
 
+    <div class="container">
     <div class="row">
         <div class="col-md-4">
             <h2>Getting started / added words here blah blah</h2>
@@ -108,5 +110,5 @@
             </p>
         </div>
     </div>
-
+        </div>
 </asp:Content>

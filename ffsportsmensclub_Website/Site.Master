@@ -74,11 +74,16 @@
             </div>
         </div>
         <div class="container body-content">
+            <div class="jumbotron">
+            <h1>Fort Frances Men&#39;s Club</h1>
+             <p class="lead">This is the website for the Outdoorsmen's Club. We have a variety of activities for people of all ages. Keep reading to learn more!</p>
+             <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+            </div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Fort Frances Sportsmen's Club</p>
             </footer>
         </div>
     </form>
