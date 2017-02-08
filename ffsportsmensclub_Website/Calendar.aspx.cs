@@ -15,6 +15,9 @@ namespace ffsportsmensclub_Website
             //if page is being rendered for the first time
             if (!IsPostBack)
             {
+                if (Request.QueryString["EventDescription"] != null)
+                    lblDescription.Text = "Description: " + Request.QueryString["EventDescription"];
+
                 //create a datatable for the events
                 DataTable dtEvents = new DataTable();
                 dtEvents.Columns.Add(new DataColumn("ID", typeof(System.Int32)));
@@ -71,7 +74,7 @@ namespace ffsportsmensclub_Website
                         //make a literal of a line break so that the label (look below) will be placed under the date
                         //basically whitespace formatting
                         Literal ltrl = new Literal();
-                        ltrl.Text = "<BR />";
+                        ltrl.Text = "<br />";
                         e.Cell.Controls.Add(ltrl);
 
                         //cell styling for events
@@ -80,20 +83,10 @@ namespace ffsportsmensclub_Website
                         e.Cell.BorderStyle = BorderStyle.Solid;
                         e.Cell.BorderWidth = 2;
 
-                        //Create a label for use in cells where an event is
-                        Label b = new Label();
-                        b.Font.Size = 8;
-                        b.Font.Bold = true;
-                        b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#336699");
-                        //Set the label text to whatever was entered in the event title
-                        b.Text = oItem["EventTitle"].ToString();
-                        //Add this control to be used
-                        e.Cell.Controls.Add(b);
-
-                        //CHANGE THIS ************************************************************************
-                        //Make it so that when you click this you will get to read the event description.  Preferably in popup format.
+                        //create a literal which will create a link (in html format) which displays as the event title but can link to a description of the event
                         Literal ltrl2 = new Literal();
-                        ltrl2.Text = "<BR /><a style='font-size:0.9em' href='Calendar.aspx?EventDescription=" + oItem["EventDescription"].ToString() + "'>View Description</a>";
+                        string evTitle = oItem["EventTitle"].ToString();
+                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx?EventDescription=" + oItem["EventDescription"].ToString() + "'><b>" + evTitle + "</b></a><br />";
                         e.Cell.Controls.Add(ltrl2);
                     }
                 }

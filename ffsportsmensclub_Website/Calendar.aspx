@@ -17,6 +17,9 @@
     <div class="col-md-12"> <!-- CALENDAR -->
 
         <!--TEXTBOXES-->
+            <b>Description::</b><br />
+            <asp:Label ID="lblDescription" runat="server"></asp:Label><br />
+
             <b>Event ID:</b><br />
             <asp:TextBox ID="txtEventID" runat="server"></asp:TextBox><br />
 
