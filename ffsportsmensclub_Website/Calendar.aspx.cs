@@ -22,13 +22,18 @@ namespace ffsportsmensclub_Website
 
                 //create a datatable for the events
                 DataTable dtEvents = new DataTable();
-                dtEvents.Columns.Add(new DataColumn("EVentID", typeof(System.Int32)));
+                dtEvents.Columns.Add(new DataColumn("EventID", typeof(System.Int32)));
                 dtEvents.Columns.Add(new DataColumn("EventDate", typeof(System.DateTime)));
                 dtEvents.Columns.Add(new DataColumn("EventTitle"));
                 dtEvents.Columns.Add(new DataColumn("EventDescription"));
                 dtEvents.Columns.Add(new DataColumn("UserName"));
                 dtEvents.Columns.Add(new DataColumn("UserEmail"));
                 dtEvents.Columns.Add(new DataColumn("UserPhone", typeof(System.Double)));
+
+                DataColumn[] key = new DataColumn[1];
+                key[0] = dtEvents.Columns[0];
+                lblDate.Text = key[0].ToString();
+                dtEvents.PrimaryKey = key;
 
                 //sample events forcefully entered
                 dtEvents.Rows.Add(EvID+=1, DateTime.Now.AddDays(10), "Lunch Party", "Address: Mitali Restaurent, 10 New eskaton, Dhaka", "James", "james@shaw.ca", 8077009625);
@@ -92,16 +97,11 @@ namespace ffsportsmensclub_Website
                         Literal ltrl2 = new Literal();
                         string evDesc = oItem["EventDescription"].ToString();
                         string evTitle = oItem["EventTitle"].ToString();
-                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx?EventDescription=" + evDesc + "' onclick='DescriptionView(oItem['evDesc'])'><b>" + evTitle + "</b></a><br />";
+                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx?EventDescription=" + evDesc + "' onclick=''><b>" + evTitle + "</b></a><br />";
                         e.Cell.Controls.Add(ltrl2);
                     }
                 }
             }
-        }
-
-        protected void DescriptionView(string desc)
-        {
-            lblDescription.Text = "Description: " + desc;
         }
 
         //Create new events.  This is called from the create event button
@@ -129,6 +129,38 @@ namespace ffsportsmensclub_Website
 
                 }
             }
+        }
+
+        protected void RowGrabber_Click(object sender, EventArgs e)
+        {
+            DataTable dtEvents = (DataTable)ViewState["dtEvents"];
+
+            int s = 1;
+            DataRow foundRow = dtEvents.Rows.Find(s);
+
+            if (foundRow != null)
+            {
+               // MessageBox.Show(foundRow[0].ToString());
+
+                lblID.Text = foundRow[0].ToString();
+                lblDate.Text = foundRow[1].ToString();
+                lblTitle.Text = foundRow[2].ToString();
+                lblDescription.Text = foundRow[3].ToString();
+                lblName.Text = foundRow[4].ToString();
+                lblEmail.Text = foundRow[5].ToString();
+                lblPhone.Text = foundRow[6].ToString();
+            }
+            else
+            {
+                lblID.Text = "fuck";
+            }
+            //foreach (DataRow row in dtEvents.Rows)
+            //{
+            //    foreach (DataColumn column in dtEvents.Columns)
+            //    {
+            //        lblTitle.Text = (row[column]).ToString();
+            //    }
+            //}
         }
 
         //function to change the text in the textbox with whatever date gets selected (text box is read only so this is the only way to choose a date

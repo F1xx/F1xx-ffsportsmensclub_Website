@@ -43,6 +43,7 @@
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
+            <asp:Button ID="btnTest" runat="server" Text="Test" onclick="RowGrabber_Click" /><br />
             <asp:Label ID="lblID" runat="server">ID: </asp:Label><br />
             <asp:Label ID="lblDate" runat="server">Date: </asp:Label><br />
             <asp:Label ID="lblTitle" runat="server">Title: </asp:Label><br />
