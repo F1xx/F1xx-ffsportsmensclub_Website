@@ -33,12 +33,9 @@
     <div class="row">
         <div class="col-md-6">
             <h2>The club you have been looking for!</h2>
-            <p>
-                Have you been thinking to yourself that the Fort Frances and surrounding areas don't have a club for the outdoors like you have always been 
-                looking for? Have you ever wondered what it would be like to work with people who have been in the field for decades, and to see just what 
-                they can teach you that a classroom can't? Look no further than the Fort Frances Sportsmen's Club! With a wide range of activities for people 
-                of all ages and sexes, you can always be sure that no matter what is going on, there's something for you!
-            </p>
+            <textarea style="width:100%">
+               <asp:ScriptManager runat="server"></asp:ScriptManager>
+                </textarea>
         </div>
         <div class="col-md-6">
             <h2>What all is there to do?</h2>

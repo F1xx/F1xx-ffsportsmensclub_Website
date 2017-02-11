@@ -9,6 +9,8 @@ namespace ffsportsmensclub_Website
 {
     public partial class _Default : Page
     {
+        //trying to get the value from the ASPX page to come here, ideally
+        public string test1 = 
         protected void Page_Load(object sender, EventArgs e)
         {
 
