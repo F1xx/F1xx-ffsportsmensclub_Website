@@ -43,14 +43,17 @@
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
-            <asp:Button ID="btnTest" runat="server" Text="Test" /><br />
-            <asp:Label ID="lblID" runat="server">ID: </asp:Label><br />
-            <asp:Label ID="lblDate" runat="server">Date: </asp:Label><br />
-            <asp:Label ID="lblTitle" runat="server">Title: </asp:Label><br />
-            <asp:Label ID="lblDescription" runat="server">Description: </asp:Label><br />
-            <asp:Label ID="lblName" runat="server">Name: </asp:Label><br />
-            <asp:Label ID="lblEmail" runat="server">Email: </asp:Label><br />
-            <asp:Label ID="lblPhone" runat="server">Phone Number: </asp:Label><br />
+            <b>Enter an Event ID to find out more information:</b><br />
+            <asp:TextBox ID="txtRequestedID" runat="server"></asp:TextBox>
+            <asp:Button ID="EventSearch" runat="server" Text="Search" OnClick="EventSearch_Click"/><br />
+
+            <asp:Label ID="lblID" visible="false" runat="server">ID: </asp:Label><br />
+            <asp:Label ID="lblDate" visible="false" runat="server">Date: </asp:Label><br />
+            <asp:Label ID="lblTitle" visible="false" runat="server">Title: </asp:Label><br />
+            <asp:Label ID="lblDescription" visible="false" runat="server">Description: </asp:Label><br />
+            <asp:Label ID="lblName" visible="false" runat="server">Name: </asp:Label><br />
+            <asp:Label ID="lblEmail" visible="false" runat="server">Email: </asp:Label><br />
+            <asp:Label ID="lblPhone" visible="false" runat="server">Phone Number: </asp:Label><br />
         </div>
     </div>
 </asp:Content>

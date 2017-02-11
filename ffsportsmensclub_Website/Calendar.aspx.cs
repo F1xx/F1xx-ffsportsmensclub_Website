@@ -4,12 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//required for the datatables
 using System.Data;
 
 namespace ffsportsmensclub_Website
 {
     public partial class About : Page
     {
+        //create a static in so that it can be used by all functions and all of them update the same number.
+        //This makes it so that no matter what creates a new event or deletes an event the number will be the same
+        //deleting an event may prove annoying
         static int EvID = 0;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,6 +34,7 @@ namespace ffsportsmensclub_Website
                 dtEvents.Columns.Add(new DataColumn("UserEmail"));
                 dtEvents.Columns.Add(new DataColumn("UserPhone", typeof(System.Double)));
 
+                //create the Primary keys for the dtEvents table, the primary Key being their IDs
                 DataColumn[] key = new DataColumn[1];
                 key[0] = dtEvents.Columns[0];
                 lblDate.Text = key[0].ToString();
@@ -46,8 +51,9 @@ namespace ffsportsmensclub_Website
                 ViewState["dtEvents"] = dtEvents;
             }
 
-            //input the event-handler method Selection_Change for the SelectionChanged Event
+            //input the event-handler methods
             cldrEventCalendar.SelectionChanged += new EventHandler(this.Selection_Change);
+            EventSearch.Click += new EventHandler(this.EventSearch_Click);
         }
 
         protected void cldrEventCalendar_DayRender(object sender, DayRenderEventArgs e)
@@ -93,12 +99,13 @@ namespace ffsportsmensclub_Website
                         e.Cell.BorderStyle = BorderStyle.Solid;
                         e.Cell.BorderWidth = 2;
 
-                        //create a literal which will create a link (in html format) which displays as the event title but can link to a description of the event
+                        //create a literal which will create a label of the event name and its ID.
+                        //I want to make this work as a link but no luck
                         Literal ltrl2 = new Literal();
                         string evDesc = oItem["EventDescription"].ToString();
                         string evTitle = oItem["EventTitle"].ToString();
                         int evid = Convert.ToInt32(oItem["EventID"]);
-                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx' onclick='RowGrabber()'" + evid + ")'><b>" + evTitle + "</b></a><br />";
+                        ltrl2.Text = "<br /><label runat='server' style='font-size:0.9em; color:Blue' href='#' onClick='RowGrabber_Click'><b>" + evTitle + "</b><br />ID: " + evid + "</label><br />";
                         e.Cell.Controls.Add(ltrl2);
                     }
                 }
@@ -136,24 +143,48 @@ namespace ffsportsmensclub_Website
         //Function to find specific row (each row being a separate event) and display it(currently only displays to my test labels
         protected void RowGrabber(int ID)
         {
-            DataTable dtEvents = (DataTable)ViewState["dtEvents"];
-
-            int row = 3;
-            DataRow foundRow = dtEvents.Rows.Find(row);
-
-            if (foundRow != null)
+            //Make sure the ID being tried is within existing event IDs
+            if (ID <= EvID && ID >= 1)
             {
-                lblID.Text = "ID: " + foundRow[0].ToString();
-                lblDate.Text = "Date: " + foundRow[1].ToString();
-                lblTitle.Text = "Title: " + foundRow[2].ToString();
-                lblDescription.Text = "Description: " + foundRow[3].ToString();
-                lblName.Text = "Name: " + foundRow[4].ToString();
-                lblEmail.Text = "Emai: " + foundRow[5].ToString();
-                lblPhone.Text = "Phone Number: " + foundRow[6].ToString();
+                //loading the Table
+                DataTable dtEvents = (DataTable)ViewState["dtEvents"];
+
+                int row = ID;
+
+                //This is the search.  If the Find Method can find the value in 'row' within the table's Primary Key then it will return the row
+                DataRow foundRow = dtEvents.Rows.Find(row);
+
+                //this if just checks if the find succeeded.  If the find fails then foundRow is null otherwise it contains all of the columns of that row
+                if (foundRow != null)
+                {
+                    //Assign the columns to the appropriate Labels (Not super liking this form as it can be ruined if the column order Changes but it works for now)
+                    lblID.Text = "ID: " + foundRow[0].ToString();
+                    lblID.Visible = true;
+                    lblDate.Text = "Date: " + foundRow[1].ToString();
+                    lblDate.Visible = true;
+                    lblTitle.Text = "Title: " + foundRow[2].ToString();
+                    lblTitle.Visible = true;
+                    lblDescription.Text = "Description: " + foundRow[3].ToString();
+                    lblDescription.Visible = true;
+                    lblName.Text = "Name: " + foundRow[4].ToString();
+                    lblName.Visible = true;
+                    lblEmail.Text = "Emai: " + foundRow[5].ToString();
+                    lblEmail.Visible = true;
+                    lblPhone.Text = "Phone Number: " + foundRow[6].ToString();
+                    lblPhone.Visible = true;
+                }
+                else
+                {
+                    //This shouldnever be triggered due to the if outside of this if
+                    lblID.Text = "Sorry, something must have gone wrong.  Please Try Again";
+                    lblID.Visible = true;
+                }
             }
             else
             {
-                lblID.Text = "fuck";
+                //if they try to enter an ID that is either more than the largest ID or less than the smallest they hit this
+                lblID.Text = "The Event ID you entered is invalid.  Please Try Again";
+                lblID.Visible = true;
             }
         }
 
@@ -163,9 +194,20 @@ namespace ffsportsmensclub_Website
             txtDate.Text = cldrEventCalendar.SelectedDate.ToShortDateString();
         }
 
-        //void btnTest_Click(object sender, EventArgs e)
-        //{
-        //    RowGrabber(3);
-        //}
+        //Event handler fired when the search Button is clicked
+        protected void EventSearch_Click(object sender, EventArgs e)
+        {
+            //this try makes sure they enter an integer, if not they get an error message instead of crashing everything
+            try
+            {
+                int x = Convert.ToInt32(txtRequestedID.Text);
+                RowGrabber(x);
+            }
+            catch
+            {
+                lblID.Text = "Please enter an Integer";
+                lblID.Visible = true;
+            }
+        }
     }
 }
