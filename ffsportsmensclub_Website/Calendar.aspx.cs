@@ -97,7 +97,8 @@ namespace ffsportsmensclub_Website
                         Literal ltrl2 = new Literal();
                         string evDesc = oItem["EventDescription"].ToString();
                         string evTitle = oItem["EventTitle"].ToString();
-                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx?EventDescription=" + evDesc + "' onclick=''><b>" + evTitle + "</b></a><br />";
+                        int evid = Convert.ToInt32(oItem["EventID"]);
+                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx' onclick='RowGrabber()'" + evid + ")'><b>" + evTitle + "</b></a><br />";
                         e.Cell.Controls.Add(ltrl2);
                     }
                 }
@@ -117,50 +118,43 @@ namespace ffsportsmensclub_Website
                 //update the ViewState with the new one to be kept in memory (includes the new event in other words)
                 ViewState["dtEvents"] = dtEvents;
 
-                foreach (DataRow oItem in dtEvents.Rows)
-                {
-                    lblID.Text = EvID.ToString();
-                    lblDate.Text = oItem["EventDate"].ToString();
-                    lblTitle.Text = oItem["EventTitle"].ToString();
-                    lblDescription.Text = oItem["EventDescription"].ToString();
-                    lblName.Text = oItem["UserName"].ToString();
-                    lblEmail.Text = oItem["UserEmail"].ToString();
-                    lblPhone.Text = oItem["UserPhone"].ToString();
+                //Test if the events are properly created & stored
+                //foreach (DataRow oItem in dtEvents.Rows)
+                //{
+                //    lblID.Text = EvID.ToString();
+                //    lblDate.Text = oItem["EventDate"].ToString();
+                //    lblTitle.Text = oItem["EventTitle"].ToString();
+                //    lblDescription.Text = oItem["EventDescription"].ToString();
+                //    lblName.Text = oItem["UserName"].ToString();
+                //    lblEmail.Text = oItem["UserEmail"].ToString();
+                //    lblPhone.Text = oItem["UserPhone"].ToString();
 
-                }
+                //}
             }
         }
 
-        protected void RowGrabber_Click(object sender, EventArgs e)
+        //Function to find specific row (each row being a separate event) and display it(currently only displays to my test labels
+        protected void RowGrabber(int ID)
         {
             DataTable dtEvents = (DataTable)ViewState["dtEvents"];
 
-            int s = 1;
-            DataRow foundRow = dtEvents.Rows.Find(s);
+            int row = 3;
+            DataRow foundRow = dtEvents.Rows.Find(row);
 
             if (foundRow != null)
             {
-               // MessageBox.Show(foundRow[0].ToString());
-
-                lblID.Text = foundRow[0].ToString();
-                lblDate.Text = foundRow[1].ToString();
-                lblTitle.Text = foundRow[2].ToString();
-                lblDescription.Text = foundRow[3].ToString();
-                lblName.Text = foundRow[4].ToString();
-                lblEmail.Text = foundRow[5].ToString();
-                lblPhone.Text = foundRow[6].ToString();
+                lblID.Text = "ID: " + foundRow[0].ToString();
+                lblDate.Text = "Date: " + foundRow[1].ToString();
+                lblTitle.Text = "Title: " + foundRow[2].ToString();
+                lblDescription.Text = "Description: " + foundRow[3].ToString();
+                lblName.Text = "Name: " + foundRow[4].ToString();
+                lblEmail.Text = "Emai: " + foundRow[5].ToString();
+                lblPhone.Text = "Phone Number: " + foundRow[6].ToString();
             }
             else
             {
                 lblID.Text = "fuck";
             }
-            //foreach (DataRow row in dtEvents.Rows)
-            //{
-            //    foreach (DataColumn column in dtEvents.Columns)
-            //    {
-            //        lblTitle.Text = (row[column]).ToString();
-            //    }
-            //}
         }
 
         //function to change the text in the textbox with whatever date gets selected (text box is read only so this is the only way to choose a date
@@ -168,5 +162,10 @@ namespace ffsportsmensclub_Website
         {
             txtDate.Text = cldrEventCalendar.SelectedDate.ToShortDateString();
         }
+
+        //void btnTest_Click(object sender, EventArgs e)
+        //{
+        //    RowGrabber(3);
+        //}
     }
 }
