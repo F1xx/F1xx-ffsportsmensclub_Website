@@ -10,6 +10,8 @@ namespace ffsportsmensclub_Website
 {
     public partial class About : Page
     {
+        static int EvID = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //if page is being rendered for the first time
@@ -20,15 +22,18 @@ namespace ffsportsmensclub_Website
 
                 //create a datatable for the events
                 DataTable dtEvents = new DataTable();
-                dtEvents.Columns.Add(new DataColumn("ID", typeof(System.Int32)));
+                dtEvents.Columns.Add(new DataColumn("EVentID", typeof(System.Int32)));
                 dtEvents.Columns.Add(new DataColumn("EventDate", typeof(System.DateTime)));
                 dtEvents.Columns.Add(new DataColumn("EventTitle"));
                 dtEvents.Columns.Add(new DataColumn("EventDescription"));
+                dtEvents.Columns.Add(new DataColumn("UserName"));
+                dtEvents.Columns.Add(new DataColumn("UserEmail"));
+                dtEvents.Columns.Add(new DataColumn("UserPhone", typeof(System.Double)));
 
                 //sample events forcefully entered
-                dtEvents.Rows.Add(1, DateTime.Now.AddDays(10), "Lunch Party", "Address: Mitali Restaurent, 10 New eskaton, Dhaka");
-                dtEvents.Rows.Add(2, DateTime.Now.AddDays(7), "Dance Party", "Address: Hotel Purbani, 10 New eskaton, Dhaka");
-                dtEvents.Rows.Add(3, DateTime.Now.AddDays(2), "Dinner Party", "Address: Seraton, 10 New eskaton, Dhaka");
+                dtEvents.Rows.Add(EvID+=1, DateTime.Now.AddDays(10), "Lunch Party", "Address: Mitali Restaurent, 10 New eskaton, Dhaka", "James", "james@shaw.ca", 8077009625);
+                dtEvents.Rows.Add(EvID+=1, DateTime.Now.AddDays(7), "Dance Party", "Address: Hotel Purbani, 10 New eskaton, Dhaka", "Frank", "frank@gmail.com", 8077777777);
+                dtEvents.Rows.Add(EvID+=1, DateTime.Now.AddDays(2), "Dinner Party", "Address: Seraton, 10 New eskaton, Dhaka", "Jenny", "jenny@hotmail.com", 8075555555);
 
                 //Keep the dtEvents datatable saved.
                 //ie if the page is reloaded an entered event in dtEvents will persist
@@ -85,12 +90,18 @@ namespace ffsportsmensclub_Website
 
                         //create a literal which will create a link (in html format) which displays as the event title but can link to a description of the event
                         Literal ltrl2 = new Literal();
+                        string evDesc = oItem["EventDescription"].ToString();
                         string evTitle = oItem["EventTitle"].ToString();
-                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx?EventDescription=" + oItem["EventDescription"].ToString() + "'><b>" + evTitle + "</b></a><br />";
+                        ltrl2.Text = "<br /><a style='font-size:0.9em; color:Blue' href='Calendar.aspx?EventDescription=" + evDesc + "' onclick='DescriptionView(oItem['evDesc'])'><b>" + evTitle + "</b></a><br />";
                         e.Cell.Controls.Add(ltrl2);
                     }
                 }
             }
+        }
+
+        protected void DescriptionView(string desc)
+        {
+            lblDescription.Text = "Description: " + desc;
         }
 
         //Create new events.  This is called from the create event button
@@ -102,9 +113,21 @@ namespace ffsportsmensclub_Website
                 //this updates ensuring the most current version of this table is the one being added to
                 DataTable dtEvents = (DataTable)ViewState["dtEvents"];
                 //adding of the event
-                dtEvents.Rows.Add(Convert.ToInt32(txtEventID.Text), Convert.ToDateTime(txtDate.Text), txtEvent.Text, txtEventDescription.Text);
+                dtEvents.Rows.Add(EvID += 1, Convert.ToDateTime(txtDate.Text), txtEventTitle.Text, txtEventDescription.Text, txtUserName.Text, txtUserEmail.Text, Convert.ToDouble(txtUserPhone.Text));
                 //update the ViewState with the new one to be kept in memory (includes the new event in other words)
                 ViewState["dtEvents"] = dtEvents;
+
+                foreach (DataRow oItem in dtEvents.Rows)
+                {
+                    lblID.Text = EvID.ToString();
+                    lblDate.Text = oItem["EventDate"].ToString();
+                    lblTitle.Text = oItem["EventTitle"].ToString();
+                    lblDescription.Text = oItem["EventDescription"].ToString();
+                    lblName.Text = oItem["UserName"].ToString();
+                    lblEmail.Text = oItem["UserEmail"].ToString();
+                    lblPhone.Text = oItem["UserPhone"].ToString();
+
+                }
             }
         }
 
