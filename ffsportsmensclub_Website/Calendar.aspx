@@ -48,6 +48,7 @@
             <asp:Button ID="EventSearch" runat="server" Text="Search" OnClick="EventSearch_Click"/><br />
 
             <asp:Label ID="lblID" visible="false" runat="server">ID: </asp:Label><br />
+            <asp:Label ID="lblApproved" visible="false" runat="server">Approved: </asp:Label><br />
             <asp:Label ID="lblDate" visible="false" runat="server">Date: </asp:Label><br />
             <asp:Label ID="lblTitle" visible="false" runat="server">Title: </asp:Label><br />
             <asp:Label ID="lblDescription" visible="false" runat="server">Description: </asp:Label><br />
