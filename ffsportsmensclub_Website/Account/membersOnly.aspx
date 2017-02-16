@@ -33,9 +33,11 @@
     <div class="row">
         <div class="col-md-6">
             <h2>The club you have been looking for!</h2>
-            <textarea style="width:100%" id="content" runat="server">
-               <asp:ScriptManager runat="server"></asp:ScriptManager>
-                </textarea>
+            <asp:TextBox runat="server" ID="content">
+
+            </asp:TextBox>
+            <asp:Button ID="Button1" PostBackUrl="~/Default.aspx" runat="server" Text="Update" />
+          <%--  <asp:Button ID="updateBtn" runat="Server" Text="Update" CommandName="txtstate" CommandArgument="Ascending" OnCommand="updateMainInfo" />--%>
         </div>
         <div class="col-md-6">
             <h2>What all is there to do?</h2>
