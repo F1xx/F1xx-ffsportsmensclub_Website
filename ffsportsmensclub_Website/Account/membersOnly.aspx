@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2>The club you have been looking for!</h2>
-            <textarea style="width:100%">
+            <textarea style="width:100%" id="content" runat="server">
                <asp:ScriptManager runat="server"></asp:ScriptManager>
                 </textarea>
         </div>

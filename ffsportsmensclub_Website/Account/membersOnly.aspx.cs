@@ -12,10 +12,8 @@ namespace ffsportsmensclub_Website.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             //attempting to get the information from the Default page to fill up the text boxes of the member area on load
-            public string fillBox()
-            {
-                
-            }
+            string strValue;
+            strValue = content.Value;
         }
     }
 }
