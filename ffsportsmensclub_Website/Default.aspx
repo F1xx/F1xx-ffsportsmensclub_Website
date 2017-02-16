@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2>The club you have been looking for!</h2>
-            <p id="textArea1">
+            <p id="textArea1" runat="server" contenteditable="true">
                 Have you been thinking to yourself that the Fort Frances and surrounding areas don't have a club for the outdoors like you have always been 
                 looking for? Have you ever wondered what it would be like to work with people who have been in the field for decades, and to see just what 
                 they can teach you that a classroom can't? Look no further than the Fort Frances Sportsmen's Club! With a wide range of activities for people 
@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-6">
             <h2>What all is there to do?</h2>
-            <p>
+            <p id="textArea2">
                 What isn't there to do? With a range of activities from archery and hunting, to fishing or beaver damn breaking, and bird house building, there's nothing 
                 we won't do if it's outdoors! Many of the members of the club have been actively in this field throughout their entire life, while some others are just getting 
                 started! We want everyone to enjoy the great outdoors as much as we do, so you can be sure that if you think you won't fit in, think again! We go out with classrooms 
@@ -126,16 +126,13 @@
     <div class="row">
         <div class="col-md-6">
             <h2>The club you have been looking for!</h2>
-            <p id="textArea1">
-                Have you been thinking to yourself that the Fort Frances and surrounding areas don't have a club for the outdoors like you have always been 
-                looking for? Have you ever wondered what it would be like to work with people who have been in the field for decades, and to see just what 
-                they can teach you that a classroom can't? Look no further than the Fort Frances Sportsmen's Club! With a wide range of activities for people 
-                of all ages and sexes, you can always be sure that no matter what is going on, there's something for you!
-            </p>
+            <textarea runat="server" id="adminArea1" name="adminArea1">
+                
+            </textarea>
         </div>
         <div class="col-md-6">
             <h2>What all is there to do?</h2>
-            <p>
+            <p id="adminArea2">
                 What isn't there to do? With a range of activities from archery and hunting, to fishing or beaver damn breaking, and bird house building, there's nothing 
                 we won't do if it's outdoors! Many of the members of the club have been actively in this field throughout their entire life, while some others are just getting 
                 started! We want everyone to enjoy the great outdoors as much as we do, so you can be sure that if you think you won't fit in, think again! We go out with classrooms 

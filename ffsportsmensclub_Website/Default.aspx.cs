@@ -9,11 +9,11 @@ namespace ffsportsmensclub_Website
 {
     public partial class _Default : Page 
     {
-        //trying to get the value from the ASPX page to come here, ideally
         
+        //trying to get the value from the ASPX page to come here, ideally
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
