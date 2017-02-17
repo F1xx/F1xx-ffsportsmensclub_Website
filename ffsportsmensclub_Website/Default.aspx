@@ -2,6 +2,51 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
             
+    <script runat="server">
+
+        void Page_Load(Object sender, EventArgs e)
+        {
+            // Manually register the event-handling method for
+            // the Click event of the Button controls.
+            ButtonTest.Click += new EventHandler(this.ButtonTest_Click);
+            ButtonUpdate.Click += new EventHandler(this.ButtonUpdate_Click);
+        }
+
+        void ButtonTest_Click(Object sender,
+                               EventArgs e)
+        {
+            // When the button is clicked,
+            // make it invisible, and make other button
+            // visible
+
+            Button clickedButton = (Button)sender;
+            clickedButton.Visible = false;
+            ButtonUpdate.Visible = true;
+            textUpdate1.Text = textArea1.Text;
+
+            // Display the textbox for editing text.
+            textUpdate1.Visible = true;
+        }
+
+        void ButtonUpdate_Click(Object sender,
+                           EventArgs e)
+        {
+            // When the button is clicked,
+            // make it invisible, and make other button
+            // visible
+            Button clickedButton = (Button)sender;
+            clickedButton.Visible = false;
+            ButtonTest.Visible = true;
+
+            //hide text box for updating text
+            textUpdate1.Visible = false;
+
+            //update text of page
+            //will change this to a var 
+            textArea1.Text = textUpdate1.Text;
+        }
+
+</script>
 
     <div class="container">
     <div class="row">
@@ -12,6 +57,9 @@
                 they can teach you that a classroom can't? Look no further than the Fort Frances Sportsmen's Club! With a wide range of activities for people 
                 of all ages and sexes, you can always be sure that no matter what is going on, there's something for you!">
             </asp:Label>
+            <asp:TextBox ID="textUpdate1" runat="server" Visible="false"></asp:TextBox>
+            <asp:Button id="ButtonUpdate" runat="server"  Text="update" OnClick="ButtonUpdate_Click" Visible="false"/>
+            <asp:Button ID="ButtonTest" runat="server" Text="Edit" OnClick="ButtonTest_Click" />
         </div>
         <div class="col-md-6">
             <h2>What all is there to do?</h2>
