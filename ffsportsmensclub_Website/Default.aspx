@@ -14,6 +14,12 @@
             ButtonTest2.Click += new EventHandler(this.ButtonTest2_Click);
             ButtonUpdate2.Click += new EventHandler(this.ButtonUpdate2_Click);
 
+            ButtonTest3.Click += new EventHandler(this.ButtonTest3_Click);
+            ButtonUpdate3.Click += new EventHandler(this.ButtonUpdate3_Click);
+
+            //All the below ifs will check is if the sessions are null or not
+            //if not, will update the text within to what the value is
+            //will retain throughout the changing of pages
             if (Session["txtUpdate1"] != null)
             {
                 title1.InnerText = Session["txtUpdate1"].ToString();
@@ -29,6 +35,14 @@
             if (Session["txtUpdate4"] != null)
             {
                 textArea3.Text = Session["txtUpdate4"].ToString();
+            }
+            if (Session["txtUpdate5"] != null)
+            {
+                title3.InnerText = Session["txtUpdate5"].ToString();
+            }
+            if (Session["txtUpdate6"] != null)
+            {
+                textArea4.Text = Session["txtUpdate6"].ToString();
             }
         }
 
@@ -70,7 +84,7 @@
             textArea2.Visible = true;
 
             //update text of page
-            //will change this to a var 
+            //will change sessions, as they can stay within the lifetime of the site being online 
             Session["txtUpdate1"] = textUpdate1.Text;
             Session["txtUpdate2"] = textUpdate2.Text;
             title1.InnerText = textUpdate1.Text;
@@ -116,7 +130,7 @@
             textArea3.Visible = true;
 
             //update text of page
-            //will change this to a var 
+            //will change sessions, as they can stay within the lifetime of the site being online
             Session["txtUpdate3"] = textUpdate3.Text;
             Session["txtUpdate4"] = textUpdate4.Text;
             title2.InnerText = textUpdate3.Text;
@@ -124,12 +138,55 @@
         }
 
         //This is for the second row / first column on the main page
+        void ButtonTest3_Click(Object sender,
+                               EventArgs e)
+        {
+            // When the button is clicked,
+            // make it invisible, and make other button
+            // visible
 
+            Button clickedButton = (Button)sender;
+            clickedButton.Visible = false;
+            ButtonUpdate3.Visible = true;
+            textUpdate5.Text = title3.InnerText;
+            textUpdate6.Text = textArea4.Text;
+
+            // Display the textbox for editing text.
+            textUpdate5.Visible = true;
+            textUpdate6.Visible = true;
+            title3.Visible = false;
+            textArea4.Visible = false;
+        }
+
+        void ButtonUpdate3_Click(Object sender,
+                           EventArgs e)
+        {
+            // When the button is clicked,
+            // make it invisible, and make other button
+            // visible
+            Button clickedButton = (Button)sender;
+            clickedButton.Visible = false;
+            ButtonTest3.Visible = true;
+
+            //hide text box for updating text
+            textUpdate5.Visible = false;
+            textUpdate6.Visible = false;
+            title3.Visible = true;
+            textArea4.Visible = true;
+
+            //update text of page
+            //will change sessions, as they can stay within the lifetime of the site being online
+            Session["txtUpdate5"] = textUpdate5.Text;
+            Session["txtUpdate6"] = textUpdate6.Text;
+            title3.InnerText = textUpdate5.Text;
+            textArea4.Text = textUpdate6.Text;
+        }
 
 
 </script>
 
     <div class="container">
+        <%-- First row of text and functions for updating, completed for now --%>
     <div class="row">
         <div class="col-md-6">
             <h2 runat="server" id="title1">Who are we and what do we do?</h2>
@@ -165,19 +222,20 @@
             Recent Activities
         </div>
     </div>
-
+    <%-- Second row of text and functions, beginning work now --%>
     <div class="container">
     <div class="row">
         <div class="col-md-3">
             <img src="Images/grandad1.JPG" class="img-responsive" alt="Image showcasing a classroom outdoors" />
-            <h2>Classroom adventures</h2>
-            <p>
+            <h2 runat="server" id="title3">Classroom adventures</h2>
+            <asp:Label runat="server" ID="textArea4" Text="
                 ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.">
+            </asp:Label>
+            <asp:TextBox ID="textUpdate5" runat="server" Visible="false" Width="100%" TextMode="MultiLine" Wrap="true" Rows="3"></asp:TextBox><br />
+            <asp:TextBox ID="textUpdate6" runat="server" Visible="false" Width="100%" TextMode="MultiLine" Wrap="true" Rows="10"></asp:TextBox><br />
+            <asp:Button id="ButtonUpdate3" runat="server"  Text="update" OnClick="ButtonUpdate3_Click" Visible="false"/>
+            <asp:Button ID="ButtonTest3" runat="server" Text="Edit" OnClick="ButtonTest3_Click" />
         </div>
         <div class="col-md-3">
             <img src="Images/grandad2.jpg" class="img-responsive" alt="Image showcasing more stuff" />
