@@ -14,6 +14,22 @@
             ButtonTest2.Click += new EventHandler(this.ButtonTest2_Click);
             ButtonUpdate2.Click += new EventHandler(this.ButtonUpdate2_Click);
 
+            if (Session["txtUpdate1"] != null)
+            {
+                title1.InnerText = Session["txtUpdate1"].ToString();
+            }
+            if (Session["txtUpdate2"] != null)
+            {
+                textArea2.Text = Session["txtUpdate2"].ToString();
+            }
+            if (Session["txtUpdate3"] != null)
+            {
+                title2.InnerText = Session["txtUpdate3"].ToString();
+            }
+            if (Session["txtUpdate4"] != null)
+            {
+                textArea3.Text = Session["txtUpdate4"].ToString();
+            }
         }
 
         //This is for the first column on the main page
@@ -55,6 +71,8 @@
 
             //update text of page
             //will change this to a var 
+            Session["txtUpdate1"] = textUpdate1.Text;
+            Session["txtUpdate2"] = textUpdate2.Text;
             title1.InnerText = textUpdate1.Text;
             textArea2.Text = textUpdate2.Text;
         }
@@ -99,6 +117,8 @@
 
             //update text of page
             //will change this to a var 
+            Session["txtUpdate3"] = textUpdate3.Text;
+            Session["txtUpdate4"] = textUpdate4.Text;
             title2.InnerText = textUpdate3.Text;
             textArea3.Text = textUpdate4.Text;
         }
@@ -112,7 +132,7 @@
     <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h2 runat="server" id="title1">The club you have been looking for!</h2>
+            <h2 runat="server" id="title1">Who are we and what do we do?</h2>
             <asp:Label  id="textArea2" runat="server" Text="Have you been thinking to yourself that the Fort Frances and surrounding areas don't have a club for the outdoors like you have always been 
                 looking for? Have you ever wondered what it would be like to work with people who have been in the field for decades, and to see just what 
                 they can teach you that a classroom can't? Look no further than the Fort Frances Sportsmen's Club! With a wide range of activities for people 
