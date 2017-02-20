@@ -91,4 +91,22 @@
             <h2>Put the calendar in here</h2>
         </div>
     </div>
+
+    <%-- Here is a log in view for yourself monsieur Fixx --%>
+    <%-- Anonymous template is for when someone is not logged in; what they will see --%>
+    <%-- Logged in template is used for when you want something to be seen when someone is indeed logged in --%>
+    <div class="container" runat="server" id="testingView">
+        <div class="col-md-12">
+           <asp:LoginView id="loginView1" runat="server">
+        <AnonymousTemplate>
+        please login now to see more stuff here
+        </AnonymousTemplate>
+        <LoggedInTemplate>
+        Welcome , you are now logged in! Gz!
+        </LoggedInTemplate>
+        </asp:LoginView>
+
+        </div>
+    </div>
+
 </asp:Content>
