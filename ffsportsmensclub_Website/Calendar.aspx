@@ -68,6 +68,12 @@
             mainContent.Text = textChange2.Text;
         }
     </script>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Fort Frances Men&#39;s Club</h1>
+             <p class="lead">Book yourself a time below!</p>
+            </div>
+    </div>  
 
     <div class="container">
     <div class="col-md-12">

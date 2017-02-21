@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ffsportsmensclub_Website._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-            
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Fort Frances Men&#39;s Club</h1>
+             <p class="lead">Welcome to the Fort Frances Sportsmen's Club!</p>
+             <p><a href="ClubProfile.aspx" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+            </div>
+    </div>        
+
     <script runat="server">
 
         void Page_Load(Object sender, EventArgs e)
