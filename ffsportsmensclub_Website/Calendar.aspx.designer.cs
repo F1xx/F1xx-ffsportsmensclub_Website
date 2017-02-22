@@ -85,15 +85,6 @@ namespace ffsportsmensclub_Website {
         protected global::System.Web.UI.WebControls.Calendar cldrEventCalendar;
         
         /// <summary>
-        /// AzureSportsmen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource AzureSportsmen;
-        
-        /// <summary>
         /// lstTest control.
         /// </summary>
         /// <remarks>
@@ -119,5 +110,14 @@ namespace ffsportsmensclub_Website {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSQLTest;
+        
+        /// <summary>
+        /// AzureSportsmen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource AzureSportsmen;
     }
 }

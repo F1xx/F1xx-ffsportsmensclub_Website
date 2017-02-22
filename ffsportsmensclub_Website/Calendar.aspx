@@ -40,11 +40,6 @@
 
         <!--ACTUAL CALENDAR-->
             <asp:Calendar ID="cldrEventCalendar" runat="server" Height="300px" ondayrender="cldrEventCalendar_DayRender" Width="700px"></asp:Calendar>
-        <asp:SqlDataSource ID="AzureSportsmen" runat="server" ConnectionString="<%$ ConnectionStrings:FFSportsmensClubConnectionString %>" SelectCommand="SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @ID)">
-            <SelectParameters>
-                <asp:QueryStringParameter DefaultValue="1" Name="ID" QueryStringField="id" Type="Int32" />
-            </SelectParameters>
-        </asp:SqlDataSource>
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
@@ -106,4 +101,11 @@
             <asp:Button ID="btnSQLTest" runat="server" Text="Test" OnClick="Test_Click"/><br />
         </div>
     </div>
+
+    <%-- DATA SOURCE --%>
+    <asp:SqlDataSource ID="AzureSportsmen" runat="server" ConnectionString="<%$ ConnectionStrings:FFSportsmensClubConnectionString %>" SelectCommand="SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @ID)">
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="1" Name="ID" QueryStringField="id" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 </asp:Content>
