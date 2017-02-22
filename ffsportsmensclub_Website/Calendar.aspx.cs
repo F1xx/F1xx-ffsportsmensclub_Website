@@ -23,11 +23,11 @@ namespace ffsportsmensclub_Website
             //if page is being rendered for the first time
             if (!IsPostBack)
             {
-                if (Request.QueryString["EventDescription"] != null)
-                {
-                    lblDescription.Text = "Description: " + Request.QueryString["EventDescription"];
-                    lblDescription.Visible = true;
-                }
+                //if (Request.QueryString["EventDescription"] != null)
+                //{
+                //    lblDescription.Text = "Description: " + Request.QueryString["EventDescription"];
+                //    lblDescription.Visible = true;
+                //}
 
                 //create a datatable for the events
                 DataTable dtEvents = new DataTable();
@@ -60,7 +60,7 @@ namespace ffsportsmensclub_Website
 
             //input the event-handler methods
             cldrEventCalendar.SelectionChanged += new EventHandler(this.Selection_Change);
-            EventSearch.Click += new EventHandler(this.EventSearch_Click);
+            //EventSearch.Click += new EventHandler(this.EventSearch_Click);
         }
 
         protected void cldrEventCalendar_DayRender(object sender, DayRenderEventArgs e)
@@ -136,108 +136,95 @@ namespace ffsportsmensclub_Website
                 dtEvents.Rows.Add(EvID += 1, false, Convert.ToDateTime(txtDate.Text), txtEventTitle.Text, txtEventDescription.Text, txtUserName.Text, txtUserEmail.Text, Convert.ToDouble(txtUserPhone.Text));
                 //update the ViewState with the new one to be kept in memory (includes the new event in other words)
                 ViewState["dtEvents"] = dtEvents;
-
-                //Test if the events are properly created & stored
-                //foreach (DataRow oItem in dtEvents.Rows)
-                //{
-                //    lblID.Text = EvID.ToString();
-                //    lblDate.Text = oItem["EventDate"].ToString();
-                //    lblTitle.Text = oItem["EventTitle"].ToString();
-                //    lblDescription.Text = oItem["EventDescription"].ToString();
-                //    lblName.Text = oItem["UserName"].ToString();
-                //    lblEmail.Text = oItem["UserEmail"].ToString();
-                //    lblPhone.Text = oItem["UserPhone"].ToString();
-
-                //}
             }
         }
 
         //Function to find specific row (each row being a separate event) and display it(currently only displays to my test labels
-        protected void RowGrabber(int ID)
-        {
-            //Make sure the ID being tried is within existing event IDs
-            if (ID <= EvID && ID >= 1)
-            {
-                //loading the Table
-                DataTable dtEvents = (DataTable)ViewState["dtEvents"];
+        //protected void RowGrabber(int ID)
+        //{
+        //    //Make sure the ID being tried is within existing event IDs
+        //    if (ID <= EvID && ID >= 1)
+        //    {
+        //        //loading the Table
+        //        DataTable dtEvents = (DataTable)ViewState["dtEvents"];
 
-                //checks if the searched event is approved yet.  If it isn't you geta message saying so, else it will actually do the search.
-                object[] rowcheck = new object[2];
-                rowcheck[0] = ID;
-                rowcheck[1] = false;
-                DataRow foundRowCheck = dtEvents.Rows.Find(rowcheck);
-                if (foundRowCheck != null)
-                {
-                    lblID.Text = "That Event is pending approval.  Please check back later.";
-                    lblID.Visible = true;
-                    lblApproved.Visible = false;
-                    lblDate.Visible = false;
-                    lblTitle.Visible = false;
-                    lblDescription.Visible = false;
-                    lblName.Visible = false;
-                    lblEmail.Visible = false;
-                    lblPhone.Visible = false;
-                }
-                else
-                {
-                    object[] row = new object[2];
-                    row[0] = ID;
-                    row[1] = true;
+        //        //checks if the searched event is approved yet.  If it isn't you geta message saying so, else it will actually do the search.
+        //        object[] rowcheck = new object[2];
+        //        rowcheck[0] = ID;
+        //        rowcheck[1] = false;
+        //        DataRow foundRowCheck = dtEvents.Rows.Find(rowcheck);
+        //        if (foundRowCheck != null)
+        //        {
+        //            lblID.Text = "That Event is pending approval.  Please check back later.";
+        //            lblID.Visible = true;
+        //            lblApproved.Visible = false;
+        //            lblDate.Visible = false;
+        //            lblTitle.Visible = false;
+        //            lblDescription.Visible = false;
+        //            lblName.Visible = false;
+        //            lblEmail.Visible = false;
+        //            lblPhone.Visible = false;
+        //        }
+        //        else
+        //        {
+        //            object[] row = new object[2];
+        //            row[0] = ID;
+        //            row[1] = true;
 
-                    //This is the search.  If the Find Method can find the value in 'row' within the table's Primary Key then it will return the row
-                    DataRow foundRow = dtEvents.Rows.Find(row);
+        //            //This is the search.  If the Find Method can find the value in 'row' within the table's Primary Key then it will return the row
+        //            DataRow foundRow = dtEvents.Rows.Find(row);
 
-                    //this if just checks if the find succeeded.  If the find fails then foundRow is null otherwise it contains all of the columns of that row
-                    if (foundRow != null)
-                    {
-                        //Assign the columns to the appropriate Labels (Not super liking this form as it can be ruined if the column order Changes but it works for now)
-                        lblID.Text = "ID: " + foundRow[0].ToString();
-                        lblID.Visible = true;
-                        lblApproved.Text = "Approved: " + foundRow[1].ToString();
-                        lblApproved.Visible = true;
-                        lblDate.Text = "Date: " + foundRow[2].ToString();
-                        lblDate.Visible = true;
-                        lblTitle.Text = "Title: " + foundRow[3].ToString();
-                        lblTitle.Visible = true;
-                        lblDescription.Text = "Description: " + foundRow[4].ToString();
-                        lblDescription.Visible = true;
-                        lblName.Text = "Name: " + foundRow[5].ToString();
-                        lblName.Visible = true;
-                        lblEmail.Text = "Emai: " + foundRow[6].ToString();
-                        lblEmail.Visible = true;
-                        lblPhone.Text = "Phone Number: " + foundRow[7].ToString();
-                        lblPhone.Visible = true;
-                    }
-                    else
-                    {
-                        //This shouldnever be triggered due to the if outside of this if
-                        lblID.Text = "Sorry, something must have gone wrong.  Please Try Again";
-                        lblID.Visible = true;
-                        lblApproved.Visible = false;
-                        lblDate.Visible = false;
-                        lblTitle.Visible = false;
-                        lblDescription.Visible = false;
-                        lblName.Visible = false;
-                        lblEmail.Visible = false;
-                        lblPhone.Visible = false;
-                    }
-                }
+        //            //this if just checks if the find succeeded.  If the find fails then foundRow is null otherwise it contains all of the columns of that row
+        //            if (foundRow != null)
+        //            {
+        //                //Assign the columns to the appropriate Labels (Not super liking this form as it can be ruined if the column order Changes but it works for now)
+        //                lblID.Text = "ID: " + foundRow[0].ToString();
+        //                lblID.Visible = true;
+        //                lblApproved.Text = "Approved: " + foundRow[1].ToString();
+        //                lblApproved.Visible = true;
+        //                lblDate.Text = "Date: " + foundRow[2].ToString();
+        //                lblDate.Visible = true;
+        //                lblTitle.Text = "Title: " + foundRow[3].ToString();
+        //                lblTitle.Visible = true;
+        //                lblDescription.Text = "Description: " + foundRow[4].ToString();
+        //                lblDescription.Visible = true;
+        //                lblName.Text = "Name: " + foundRow[5].ToString();
+        //                lblName.Visible = true;
+        //                lblEmail.Text = "Emai: " + foundRow[6].ToString();
+        //                lblEmail.Visible = true;
+        //                lblPhone.Text = "Phone Number: " + foundRow[7].ToString();
+        //                lblPhone.Visible = true;
+        //            }
+        //            else
+        //            {
+        //                //This shouldnever be triggered due to the if outside of this if
+        //                lblID.Text = "Sorry, something must have gone wrong.  Please Try Again";
+        //                lblID.Visible = true;
+        //                lblApproved.Visible = false;
+        //                lblDate.Visible = false;
+        //                lblTitle.Visible = false;
+        //                lblDescription.Visible = false;
+        //                lblName.Visible = false;
+        //                lblEmail.Visible = false;
+        //                lblPhone.Visible = false;
+        //            }
+        //        }
                 
-            }
-            else
-            {
-                //if they try to enter an ID that is either more than the largest ID or less than the smallest they hit this
-                lblID.Text = "The Event ID you entered is invalid.  Please Try Again";
-                lblID.Visible = true;
-                lblApproved.Visible = false;
-                lblDate.Visible = false;
-                lblTitle.Visible = false;
-                lblDescription.Visible = false;
-                lblName.Visible = false;
-                lblEmail.Visible = false;
-                lblPhone.Visible = false;
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        //if they try to enter an ID that is either more than the largest ID or less than the smallest they hit this
+        //        lblID.Text = "The Event ID you entered is invalid.  Please Try Again";
+        //        lblID.Visible = true;
+        //        lblApproved.Visible = false;
+        //        lblDate.Visible = false;
+        //        lblTitle.Visible = false;
+        //        lblDescription.Visible = false;
+        //        lblName.Visible = false;
+        //        lblEmail.Visible = false;
+        //        lblPhone.Visible = false;
+        //    }
+        //}
 
         //function to change the text in the textbox with whatever date gets selected (text box is read only so this is the only way to choose a date
         void Selection_Change(Object sender, EventArgs e)
@@ -246,47 +233,26 @@ namespace ffsportsmensclub_Website
         }
 
         //Event handler fired when the search Button is clicked
-        protected void EventSearch_Click(object sender, EventArgs e)
-        {
-            //this try makes sure they enter an integer, if not they get an error message instead of crashing everything
-            try
-            {
-                int x = Convert.ToInt32(txtRequestedID.Text);
-                RowGrabber(x);
+        //protected void EventSearch_Click(object sender, EventArgs e)
+        //{
+        //    //this try makes sure they enter an integer, if not they get an error message instead of crashing everything
+        //    try
+        //    {
+        //        int x = Convert.ToInt32(txtRequestedID.Text);
+        //        RowGrabber(x);
 
-            }
-            catch
-            {
-                lblID.Text = "Please enter an Integer";
-                lblID.Visible = true;
-            }
-        }
+        //    }
+        //    catch
+        //    {
+        //        lblID.Text = "Please enter an Integer";
+        //        lblID.Visible = true;
+        //    }
+        //}
 
         protected void Test_Click(object sender, EventArgs e)
         {
-            SQLTest(txtSQLTest.Text.ToString());
-        }
-
-        protected void SQLTest(string SQLID)
-        {
-            //string constr = ConfigurationManager.ConnectionStrings["sportsmensClubDBConnectionString"].ConnectionString;
-            //using (MySqlConnection con = new MySqlConnection(constr))
-            //{
-            //    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM EventList WHERE [EventID] = " + SQLID.ToString()))
-            //    {
-            //        using (MySqlDataAdapter sda = new MySqlDataAdapter())
-            //        {
-            //            cmd.Connection = con;
-            //            sda.SelectCommand = cmd;
-            //            using (DataTable dt = new DataTable())
-            //            {
-            //                sda.Fill(dt);
-            //                GridView1.DataSource = dt;
-            //                GridView1.DataBind();
-            //            }
-            //        }
-            //    }
-            //}
+            Response.Redirect("Calendar.aspx?ID=" + Convert.ToInt32(txtSQLTest.Text));
+            AzureSportsmen.SelectCommand = "SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @id)"; //+ Convert.ToInt32(txtSQLTest.Text) + ")";
         }
     }
 }

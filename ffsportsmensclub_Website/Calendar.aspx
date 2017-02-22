@@ -40,17 +40,15 @@
 
         <!--ACTUAL CALENDAR-->
             <asp:Calendar ID="cldrEventCalendar" runat="server" Height="300px" ondayrender="cldrEventCalendar_DayRender" Width="700px"></asp:Calendar>
-        <asp:GridView ID="GridView1" runat="server" DataSourceID="SportsmensDB">
-        </asp:GridView>
-        <asp:SqlDataSource ID="SportsmensDB" runat="server" ConnectionString="<%$ ConnectionStrings:sportsmensClubDBConnectionString %>" ProviderName="<%$ ConnectionStrings:sportsmensClubDBConnectionString.ProviderName %>" SelectCommand="SELECT [EventID], [Approved], [EventDate], [EventDescription], [UserEmail], [UserPhone], [UserName], [EventTitle] FROM [EventList] WHERE ([EventID] = @eventID)">
+        <asp:SqlDataSource ID="AzureSportsmen" runat="server" ConnectionString="<%$ ConnectionStrings:FFSportsmensClubConnectionString %>" SelectCommand="SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @ID)">
             <SelectParameters>
-                <asp:QueryStringParameter DefaultValue="1" Name="EventID" QueryStringField="EventID=@eventID" Type="Int32" />
+                <asp:QueryStringParameter DefaultValue="1" Name="ID" QueryStringField="id" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
-            <b>Enter an Event ID to find out more information:</b><br />
+            <%--<b>Enter an Event ID to find out more information:</b><br />
             <asp:TextBox ID="txtRequestedID" runat="server"></asp:TextBox>
             <asp:Button ID="EventSearch" runat="server" Text="Search" OnClick="EventSearch_Click"/><br />
 
@@ -62,6 +60,44 @@
             <asp:Label ID="lblName" visible="false" runat="server">Name: </asp:Label><br />
             <asp:Label ID="lblEmail" visible="false" runat="server">Email: </asp:Label><br />
             <asp:Label ID="lblPhone" visible="false" runat="server">Phone Number: </asp:Label><br />
+            <br />--%>
+
+            <asp:ListView ID="lstTest" runat="server" DataSourceID="AzureSportsmen">
+                <LayoutTemplate>
+                    <table runat="server" id="table1" >
+                      <tr runat="server" id="itemPlaceholder" ></tr>
+                    </table>
+                  </LayoutTemplate>
+                  <ItemTemplate>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblID" runat="server" Text='<%#Eval("ID") %>' /></td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblApproved" runat="server" Text='<%#Eval("Approved") %>' /></td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblDate" runat="server" Text='<%#Eval("Date") %>' /></td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblTitle" runat="server" Text='<%#Eval("Title") %>' /></td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblDescription" runat="server" Text='<%#Eval("Description") %>' /></td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblName" runat="server" Text='<%#Eval("Name") %>' /></td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblEmail" runat="server" Text='<%#Eval("Email") %>' /></td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server"><asp:Label ID="lblPhone" runat="server" Text='<%#Eval("Phone") %>' /></td>
+                    </tr>
+                  </ItemTemplate>
+                  <EmptyDataTemplate>
+                    <span>No data was returned.</span>
+                </EmptyDataTemplate>
+            </asp:ListView>
         </div>
 
         <div>
