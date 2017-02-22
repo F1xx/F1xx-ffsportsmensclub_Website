@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 //required for the datatables
 using System.Data;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace ffsportsmensclub_Website
 {
@@ -22,7 +24,10 @@ namespace ffsportsmensclub_Website
             if (!IsPostBack)
             {
                 if (Request.QueryString["EventDescription"] != null)
+                {
                     lblDescription.Text = "Description: " + Request.QueryString["EventDescription"];
+                    lblDescription.Visible = true;
+                }
 
                 //create a datatable for the events
                 DataTable dtEvents = new DataTable();
@@ -248,12 +253,40 @@ namespace ffsportsmensclub_Website
             {
                 int x = Convert.ToInt32(txtRequestedID.Text);
                 RowGrabber(x);
+
             }
             catch
             {
                 lblID.Text = "Please enter an Integer";
                 lblID.Visible = true;
             }
+        }
+
+        protected void Test_Click(object sender, EventArgs e)
+        {
+            SQLTest(txtSQLTest.Text.ToString());
+        }
+
+        protected void SQLTest(string SQLID)
+        {
+            //string constr = ConfigurationManager.ConnectionStrings["sportsmensClubDBConnectionString"].ConnectionString;
+            //using (MySqlConnection con = new MySqlConnection(constr))
+            //{
+            //    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM EventList WHERE [EventID] = " + SQLID.ToString()))
+            //    {
+            //        using (MySqlDataAdapter sda = new MySqlDataAdapter())
+            //        {
+            //            cmd.Connection = con;
+            //            sda.SelectCommand = cmd;
+            //            using (DataTable dt = new DataTable())
+            //            {
+            //                sda.Fill(dt);
+            //                GridView1.DataSource = dt;
+            //                GridView1.DataBind();
+            //            }
+            //        }
+            //    }
+            //}
         }
     }
 }

@@ -40,6 +40,13 @@
 
         <!--ACTUAL CALENDAR-->
             <asp:Calendar ID="cldrEventCalendar" runat="server" Height="300px" ondayrender="cldrEventCalendar_DayRender" Width="700px"></asp:Calendar>
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="SportsmensDB">
+        </asp:GridView>
+        <asp:SqlDataSource ID="SportsmensDB" runat="server" ConnectionString="<%$ ConnectionStrings:sportsmensClubDBConnectionString %>" ProviderName="<%$ ConnectionStrings:sportsmensClubDBConnectionString.ProviderName %>" SelectCommand="SELECT [EventID], [Approved], [EventDate], [EventDescription], [UserEmail], [UserPhone], [UserName], [EventTitle] FROM [EventList] WHERE ([EventID] = @eventID)">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="1" Name="EventID" QueryStringField="EventID=@eventID" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
@@ -55,6 +62,12 @@
             <asp:Label ID="lblName" visible="false" runat="server">Name: </asp:Label><br />
             <asp:Label ID="lblEmail" visible="false" runat="server">Email: </asp:Label><br />
             <asp:Label ID="lblPhone" visible="false" runat="server">Phone Number: </asp:Label><br />
+        </div>
+
+        <div>
+            <b>SQL Test:</b><br />
+            <asp:TextBox ID="txtSQLTest" runat="server"></asp:TextBox>
+            <asp:Button ID="btnSQLTest" runat="server" Text="Test" OnClick="Test_Click"/><br />
         </div>
     </div>
 </asp:Content>
