@@ -43,7 +43,7 @@
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
-            <%--<b>Enter an Event ID to find out more information:</b><br />
+            <b>Enter an Event ID to find out more information:</b><br />
             <asp:TextBox ID="txtRequestedID" runat="server"></asp:TextBox>
             <asp:Button ID="EventSearch" runat="server" Text="Search" OnClick="EventSearch_Click"/><br />
 
@@ -55,7 +55,7 @@
             <asp:Label ID="lblName" visible="false" runat="server">Name: </asp:Label><br />
             <asp:Label ID="lblEmail" visible="false" runat="server">Email: </asp:Label><br />
             <asp:Label ID="lblPhone" visible="false" runat="server">Phone Number: </asp:Label><br />
-            <br />--%>
+            <br />
 
             <asp:ListView ID="lstTest" runat="server" DataSourceID="AzureSportsmen">
                 <LayoutTemplate>
