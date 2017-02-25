@@ -43,10 +43,6 @@
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
-            <b>Enter an Event ID to find out more information:</b><br />
-            <asp:TextBox ID="txtRequestedID" runat="server"></asp:TextBox>
-            <asp:Button ID="EventSearch" runat="server" Text="Search" OnClick="EventSearch_Click"/><br />
-
             <asp:Label ID="lblID" visible="false" runat="server">ID: </asp:Label><br />
             <asp:Label ID="lblApproved" visible="false" runat="server">Approved: </asp:Label><br />
             <asp:Label ID="lblDate" visible="false" runat="server">Date: </asp:Label><br />
