@@ -370,7 +370,6 @@
     </Compile>
     <Compile Include="Account\membersOnly.aspx.cs">
       <DependentUpon>membersOnly.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\membersOnly.aspx.designer.cs">
       <DependentUpon>membersOnly.aspx</DependentUpon>
