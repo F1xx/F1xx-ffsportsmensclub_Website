@@ -84,8 +84,6 @@ namespace ffsportsmensclub_Website
             int count = 0;
             foreach (Object id in IDList)
             {
-                lblID.Text += IDList[count].ToString();
-                lblID.Visible = true;
                 if (Convert.ToDateTime(DateList[count]).ToString("dd-MM-yyyy") == e.Day.Date.ToString("dd-MM-yyyy"))
                 {
                     if (Convert.ToBoolean(ApprovedList[count]))
