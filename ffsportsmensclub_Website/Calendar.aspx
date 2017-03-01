@@ -17,41 +17,49 @@
     <div class="col-md-12"> <!-- CALENDAR -->
 
         <!--TEXTBOXES-->
-            <b>Your Name:</b><br />
-            <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox><br />
+            <asp:Label ID="lblName" runat="server"><b>Your Name:</b></asp:Label><br />
+            <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+            <asp:Label ID="nameWarning" visible="false" runat="server">*</asp:Label><br />
 
-            <b>Event Date:</b><br />
-            <asp:TextBox ID="txtDate" runat="server" ReadOnly="True"></asp:TextBox><br />
+            <asp:Label ID="lblDate" runat="server"><b>Event Date:</b></asp:Label><br />
+            <asp:TextBox ID="txtDate" runat="server" ReadOnly="True"></asp:TextBox>
+            <asp:Label ID="dateWarning" visible="false" runat="server">*</asp:Label><br />
 
-            <b>Event Title:</b><br />
-            <asp:TextBox ID="txtEventTitle" runat="server"></asp:TextBox><br />
+            <asp:Label ID="lblTitle" runat="server"><b>Event Title:</b></asp:Label><br />
+            <asp:TextBox ID="txtEventTitle" runat="server"></asp:TextBox>
+            <asp:Label ID="titleWarning" visible="false" runat="server">*</asp:Label><br />
 
-            <b>Event Description:</b><br />
-            <asp:TextBox ID="txtEventDescription" runat="server"></asp:TextBox><br />
+            <asp:Label ID="lblDesc" runat="server"><b>Event Description:</b></asp:Label><br />
+            <asp:TextBox ID="txtEventDescription" runat="server"></asp:TextBox>
+            <asp:Label ID="descWarning" visible="false" runat="server">*</asp:Label><br />
 
-            <b>Your Email:</b><br />
-            <asp:TextBox ID="txtUserEmail" runat="server"></asp:TextBox><br />
+            <asp:Label ID="lblEmail" runat="server"><b>Your Email:</b></asp:Label><br />
+            <asp:TextBox ID="txtUserEmail" runat="server"></asp:TextBox>
+            <asp:Label ID="emailWarning" visible="false" runat="server">*</asp:Label><br />
 
-            <b>Your Phone Number:</b><br />
-            <asp:TextBox ID="txtUserPhone" runat="server"></asp:TextBox><br />
+            <asp:Label ID="lblPhone" runat="server"><b>Your Phone Number:</b></asp:Label><br />
+            <asp:TextBox ID="txtUserPhone" runat="server"></asp:TextBox>
+            <asp:Label ID="phoneWarning" visible="false" runat="server">*</asp:Label><br />
 
             <asp:Button ID="cmdCreate" runat="server" Text="Create Event" onclick="cmdCreate_Click" /><br />
         <!--/TEXTBOXES-->
 
         <!--ACTUAL CALENDAR-->
-            <asp:Calendar ID="cldrEventCalendar" runat="server" Height="300px" ondayrender="cldrEventCalendar_DayRender" Width="700px"></asp:Calendar>
+            <asp:Calendar ID="cldrEventCalendar" runat="server" Height="600px" ondayrender="cldrEventCalendar_DayRender" Width="1000px" CellPadding="5" CellSpacing="10" FirstDayOfWeek="Sunday" NextMonthText="Next" PrevMonthText="Previous">
+                <DayHeaderStyle BackColor="#E1E1E1" BorderColor="Gray" BorderStyle="Inset" BorderWidth="5px" Font-Bold="True" Font-Italic="False" Font-Size="Larger" Font-Strikeout="False" Font-Underline="False" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
+                <DayStyle BackColor="White" BorderColor="Black" BorderStyle="Solid" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
+                <SelectedDayStyle BackColor="#66CCFF" BorderStyle="Outset" BorderWidth="3px" Font-Bold="True" Font-Italic="True" HorizontalAlign="Center" VerticalAlign="Top" />
+                <TodayDayStyle BackColor="#FFFFCC" BorderStyle="Outset" BorderWidth="3px" Font-Bold="True" Font-Italic="True" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
+        </asp:Calendar>
         <!--/ACTUAL CALENDAR-->
         </div>
         <div>
+            <asp:Label ID="lblSearch" runat="server"><b>SQL Test:</b></asp:Label><br />
+            <asp:TextBox ID="txtSQLSearch" runat="server"></asp:TextBox>
+            <asp:Button ID="btnSQLSearch" runat="server" Text="Search" OnClick="Search_Click"/><br />
+        </div>
+        <div>
             <asp:Label ID="lblID" visible="false" runat="server">ID: </asp:Label><br />
-            <asp:Label ID="lblApproved" visible="false" runat="server">Approved: </asp:Label><br />
-            <asp:Label ID="lblDate" visible="false" runat="server">Date: </asp:Label><br />
-            <asp:Label ID="lblTitle" visible="false" runat="server">Title: </asp:Label><br />
-            <asp:Label ID="lblDescription" visible="false" runat="server">Description: </asp:Label><br />
-            <asp:Label ID="lblName" visible="false" runat="server">Name: </asp:Label><br />
-            <asp:Label ID="lblEmail" visible="false" runat="server">Email: </asp:Label><br />
-            <asp:Label ID="lblPhone" visible="false" runat="server">Phone Number: </asp:Label><br />
-            <br />
 
             <asp:ListView ID="lstTest" runat="server" DataSourceID="AzureSportsmen">
                 <LayoutTemplate>
@@ -89,12 +97,6 @@
                     <span>No data was returned.</span>
                 </EmptyDataTemplate>
             </asp:ListView>
-        </div>
-
-        <div>
-            <b>SQL Test:</b><br />
-            <asp:TextBox ID="txtSQLTest" runat="server"></asp:TextBox>
-            <asp:Button ID="btnSQLTest" runat="server" Text="Test" OnClick="Test_Click"/><br />
         </div>
     </div>
 
