@@ -11,4 +11,18 @@
         
     </asp:GridView>
 
+    <asp:LoginView ID="LoginView1" runat="server">
+        <AnonymousTemplate>
+            <asp:GridView ID="grdAdminGrid" runat="server" DataSourceID="SqlDataSource1">
+        
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FFSportsmensClubConnectionString %>" SelectCommand="SELECT DISTINCT * FROM [Events] WHERE ([Approved] = 0)">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="0" Name="Approved" Type="Byte" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </AnonymousTemplate>
+
+    </asp:LoginView>
+
 </asp:Content>

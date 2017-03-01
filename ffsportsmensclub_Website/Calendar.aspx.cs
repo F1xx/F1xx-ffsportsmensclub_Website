@@ -25,6 +25,7 @@ namespace ffsportsmensclub_Website
         ArrayList NameList = new ArrayList();
         ArrayList EmailList = new ArrayList();
         ArrayList PhoneList = new ArrayList();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //loads the lists with the correct data
@@ -52,7 +53,7 @@ namespace ffsportsmensclub_Website
             //Query in string format
             string sqlString = "SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events]";
             //but using 'using' the end curly bracket terminates the connection
-            using (SqlConnection Conn = new SqlConnection("Data Source=sportsmensclub.database.windows.net; uid=Fixx; pwd=CP440Database;database=FFSportsmensClub;"))
+            using (SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FFSportsmensClubConnectionString"].ConnectionString))
             {
                 SqlCommand sqlComm = new SqlCommand(sqlString, Conn);
 
