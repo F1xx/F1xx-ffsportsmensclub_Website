@@ -34,9 +34,6 @@ namespace ffsportsmensclub_Website
                 DataSet ds = new DataSet();
                 dt.Fill(ds, "UserDetail");
                 con.Close();
-                eventView.DataSource = ds;
-                eventView.DataBind();
-
                 Repeater1.DataSource = ds;
                 Repeater1.DataBind();
             }
