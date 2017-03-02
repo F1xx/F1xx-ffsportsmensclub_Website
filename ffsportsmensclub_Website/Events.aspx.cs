@@ -29,13 +29,16 @@ namespace ffsportsmensclub_Website
                 //opens the connection, binds it to the eventView
                 //Selects all the rows that have approved equaling one (or approved)
                 SqlConnection con = new SqlConnection("Data Source=sportsmensclub.database.windows.net; uid=Fixx; pwd=CP440Database;database=FFSportsmensClub;");
-                string strSQL = "Select [Approved], [Date], [Title], [Description], [Name] from Events where [Approved]=1";
+                string strSQL = "Select [Date], [Title], [Description], [Name] from Events where [Approved]=1";
                 SqlDataAdapter dt = new SqlDataAdapter(strSQL, con);
                 DataSet ds = new DataSet();
                 dt.Fill(ds, "UserDetail");
                 con.Close();
                 eventView.DataSource = ds;
                 eventView.DataBind();
+
+                Repeater1.DataSource = ds;
+                Repeater1.DataBind();
             }
         }
     }
