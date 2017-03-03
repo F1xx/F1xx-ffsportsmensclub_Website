@@ -101,7 +101,7 @@
     </div>
 
     <%-- DATA SOURCE --%>
-    <asp:SqlDataSource ID="AzureSportsmen" runat="server" ConnectionString="<%$ ConnectionStrings:FFSportsmensClubConnectionString %>" SelectCommand="SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @ID)">
+    <asp:SqlDataSource ID="AzureSportsmen" runat="server" ConnectionString="<%$ ConnectionStrings:FFCP440Student %>" SelectCommand="SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @ID)">
         <SelectParameters>
             <asp:QueryStringParameter DefaultValue="1" Name="ID" QueryStringField="id" Type="Int32" />
         </SelectParameters>

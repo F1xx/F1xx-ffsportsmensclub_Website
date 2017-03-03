@@ -34,16 +34,6 @@
     </asp:Repeater>
 
     <asp:LoginView ID="LoginView1" runat="server">
-        <AnonymousTemplate>
-            <asp:GridView ID="eventView" runat="server">
-        
-            </asp:GridView>
-            <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FFSportsmensClubConnectionString %>" SelectCommand="SELECT DISTINCT * FROM [Events] WHERE ([Approved] = 0)">
-                <SelectParameters>
-                    <asp:Parameter DefaultValue="0" Name="Approved" Type="Byte" />
-                </SelectParameters>
-            </asp:SqlDataSource>--%>
-        </AnonymousTemplate>
         <LoggedInTemplate>
             <%-- This is the template you want to put stuff in that can only be seen when you login --%>
             <%-- Cannot connect currently to the Database, but this is the template you want to use when only viewing stuff when logged in --%>

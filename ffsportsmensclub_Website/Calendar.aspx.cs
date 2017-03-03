@@ -53,7 +53,7 @@ namespace ffsportsmensclub_Website
             //Query in string format
             string sqlString = "SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events]";
             //but using 'using' the end curly bracket terminates the connection
-            using (SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FFSportsmensClubConnectionString"].ConnectionString))
+            using (SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FFCP440Student"].ConnectionString))
             {
                 SqlCommand sqlComm = new SqlCommand(sqlString, Conn);
 
@@ -252,7 +252,7 @@ namespace ffsportsmensclub_Website
                     //set the string that will insert into the table, all values inserted are parameters
                     string queryString = "INSERT INTO Events (Approved, Date, Title, Description, Name, Email, Phone) VALUES(0, @date, @title, @description, @name, @email, @phone);";
                     //set the connection with the proper destination
-                    SqlConnection connection = new SqlConnection("Data Source=sportsmensclub.database.windows.net; uid=Fixx; pwd=CP440Database;database=FFSportsmensClub;");
+                    SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["FFCP440Student"].ConnectionString);
                     //create the command objects
                     SqlCommand command = new SqlCommand();
                     //make the required parameters, seen used above in the query
@@ -274,7 +274,6 @@ namespace ffsportsmensclub_Website
 
                     //clear fields once entry is made
                     txtUserName.Text = "";
-                    txtDate.Text = "";
                     txtEventTitle.Text = "";
                     txtEventDescription.Text = "";
                     txtUserEmail.Text = "";
@@ -349,7 +348,7 @@ namespace ffsportsmensclub_Website
         void Selection_Change(Object sender, EventArgs e)
         {
             //Sets the Date box to the date selected in datetime format
-            txtDate.Text = cldrEventCalendar.SelectedDate.ToString();
+            txtDate.Text = cldrEventCalendar.SelectedDate.ToShortDateString();
         }
 
         protected void Search_Click(object sender, EventArgs e)
