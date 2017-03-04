@@ -30,7 +30,7 @@
             <asp:Label ID="titleWarning" visible="false" runat="server">*</asp:Label><br />
 
             <asp:Label ID="lblDesc" runat="server"><b>Event Description:</b></asp:Label><br />
-            <asp:TextBox ID="txtEventDescription" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtEventDescription" runat="server" Height="100px" TextMode="MultiLine" Width="500px"></asp:TextBox>
             <asp:Label ID="descWarning" visible="false" runat="server">*</asp:Label><br />
 
             <asp:Label ID="lblEmail" runat="server"><b>Your Email:</b></asp:Label><br />
