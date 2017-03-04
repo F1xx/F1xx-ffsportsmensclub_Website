@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 //required for the datatables
 using System.Data;
 using System.Configuration;
-using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -31,20 +30,7 @@ namespace ffsportsmensclub_Website
             //loads the lists with the correct data
             ListInstantiator();
 
-            //TEST to see what is in the array/how many times it actually ran
-            foreach (Object id in IDList)
-            {
-                lblID.Visible = true;
-                lblID.Text += id.ToString();
-            }
-            //if page is being rendered for the first time
-            if (!IsPostBack)
-            {
-                
-
-            }
-
-            //input the event-handler methods
+            //input the event-handler method
             cldrEventCalendar.SelectionChanged += new EventHandler(this.Selection_Change);
         }
 
@@ -232,7 +218,7 @@ namespace ffsportsmensclub_Website
                         int evid = Convert.ToInt32(IDList[count]);
                         //Remove the evID at the end for release, right now its for testing.
                         //Creates a new control which is a link to display the information for the event.  At some point this should redirect to the event page and highlight the corresponding event
-                        ltrl2.Text = "<br /><a href='Calendar.aspx?ID=" + evid + "' runat='server' style='font-size:0.9em; color:Blue'><b>" + evTitle + "</b>ID: " + evid + "</a>";
+                        ltrl2.Text = "<br /><a href='Events.aspx#" + evid + "' runat='server' style='font-size:0.9em; color:Blue'><b>" + evTitle + "</b></a>";
                         e.Cell.Controls.Add(ltrl2);
                     }
                 }
@@ -281,13 +267,11 @@ namespace ffsportsmensclub_Website
                 }
                 //not sure what to do here so right now it does pretty much nothing
                 catch
-                { lblSearch.Text = "ERROR, ERROR"; }
+                { }
             }
             else
             {
-                //if something is not valid in one of the textboxes this code runs
-                lblID.Text = "Not valid input";
-                lblID.Visible = true;
+                //does nothing atm
             }
         }
 
@@ -351,19 +335,19 @@ namespace ffsportsmensclub_Website
             txtDate.Text = cldrEventCalendar.SelectedDate.ToShortDateString();
         }
 
-        protected void Search_Click(object sender, EventArgs e)
-        {
-            //currently also searches unapproved events but I want it to for testing purposes.
-            try
-            {
-                Response.Redirect("Calendar.aspx?ID=" + Convert.ToInt32(txtSQLSearch.Text));
-                AzureSportsmen.SelectCommand = "SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @id)";
-            }
-            catch
-            {
-                lblID.Text = "Please enter an Integer";
-                lblID.Visible = true;
-            }
-        }
+        //protected void Search_Click(object sender, EventArgs e)
+        //{
+        //    //currently also searches unapproved events but I want it to for testing purposes.
+        //    try
+        //    {
+        //        Response.Redirect("Calendar.aspx?ID=" + Convert.ToInt32(txtSQLSearch.Text));
+        //        AzureSportsmen.SelectCommand = "SELECT [ID], [Approved], [Date], [Title], [Description], [Name], [Email], [Phone] FROM [Events] WHERE ([ID] = @id)";
+        //    }
+        //    catch
+        //    {
+        //        lblID.Text = "Please enter an Integer";
+        //        lblID.Visible = true;
+        //    }
+        //}
     }
 }
