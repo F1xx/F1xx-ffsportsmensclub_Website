@@ -33,8 +33,8 @@
       </ItemTemplate>
     </asp:Repeater>
 
-<%--    <asp:LoginView ID="LoginView1" runat="server">
-        <LoggedInTemplate>--%>
+    <asp:LoginView ID="LoginView1" runat="server">
+        <LoggedInTemplate>
             <%-- This is the template you want to put stuff in that can only be seen when you login --%>
             <%-- Cannot connect currently to the Database, but this is the template you want to use when only viewing stuff when logged in --%>
            
@@ -68,8 +68,8 @@
             </asp:GridView>
 
             <asp:Button ID="btnCancelEvent" runat="server" Text="Cancel Selected" OnClick="Cancel_Click" OnClientClick="return confirm('Are you sure you want to CANCEL these Event(s)?')" />
-        <%--</LoggedInTemplate>
-    </asp:LoginView>--%>
+        </LoggedInTemplate>
+    </asp:LoginView>
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FFCP440Student %>" SelectCommand="SELECT DISTINCT * FROM [Events] WHERE ([Approved] = 0)">
                 <SelectParameters>
