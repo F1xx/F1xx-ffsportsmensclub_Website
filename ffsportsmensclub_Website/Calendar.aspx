@@ -53,51 +53,6 @@
         </asp:Calendar>
         <!--/ACTUAL CALENDAR-->
         </div>
-        <div>
-            <asp:Label ID="lblSearch" runat="server"><b>SQL Test:</b></asp:Label><br />
-            <asp:TextBox ID="txtSQLSearch" runat="server"></asp:TextBox>
-            <asp:Button ID="btnSQLSearch" runat="server" Text="Search" OnClick="Search_Click"/><br />
-        </div>
-        <div>
-            <asp:Label ID="lblID" visible="false" runat="server">ID: </asp:Label><br />
-
-            <asp:ListView ID="lstTest" runat="server" DataSourceID="AzureSportsmen">
-                <LayoutTemplate>
-                    <table runat="server" id="table1" >
-                      <tr runat="server" id="itemPlaceholder" ></tr>
-                    </table>
-                  </LayoutTemplate>
-                  <ItemTemplate>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblID" runat="server" Text='<%#Eval("ID") %>' /></td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblApproved" runat="server" Text='<%#Eval("Approved") %>' /></td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblDate" runat="server" Text='<%#Eval("Date") %>' /></td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblTitle" runat="server" Text='<%#Eval("Title") %>' /></td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblDescription" runat="server" Text='<%#Eval("Description") %>' /></td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblName" runat="server" Text='<%#Eval("Name") %>' /></td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblEmail" runat="server" Text='<%#Eval("Email") %>' /></td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server"><asp:Label ID="lblPhone" runat="server" Text='<%#Eval("Phone") %>' /></td>
-                    </tr>
-                  </ItemTemplate>
-                  <EmptyDataTemplate>
-                    <span>No data was returned.</span>
-                </EmptyDataTemplate>
-            </asp:ListView>
-        </div>
     </div>
 
     <%-- DATA SOURCE --%>
