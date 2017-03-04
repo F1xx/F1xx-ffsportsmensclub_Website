@@ -23,7 +23,7 @@
     <div class="container">
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="eventBody" id="<%# DataBinder.Eval(Container.DataItem,"ID") %>">
                     <h1 class="eventTitle"><%# DataBinder.Eval(Container.DataItem,"Title") %></h1>
                     <h3 class="eventDate"><%# DataBinder.Eval(Container.DataItem,"Date") %></h3>
