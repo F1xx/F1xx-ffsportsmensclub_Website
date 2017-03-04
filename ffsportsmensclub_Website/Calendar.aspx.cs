@@ -218,7 +218,7 @@ namespace ffsportsmensclub_Website
                         int evid = Convert.ToInt32(IDList[count]);
                         //Remove the evID at the end for release, right now its for testing.
                         //Creates a new control which is a link to display the information for the event.  At some point this should redirect to the event page and highlight the corresponding event
-                        ltrl2.Text = "<br /><a href='Events.aspx?ID=" + evid + "' runat='server' style='font-size:0.9em; color:Blue'><b>" + evTitle + "</b></a>";
+                        ltrl2.Text = "<br /><a href='Events.aspx#" + evid + "' runat='server' style='font-size:0.9em; color:Blue'><b>" + evTitle + "</b></a>";
                         e.Cell.Controls.Add(ltrl2);
                     }
                 }
