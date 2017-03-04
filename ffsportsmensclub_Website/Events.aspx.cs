@@ -29,7 +29,7 @@ namespace ffsportsmensclub_Website
                 //opens the connection, binds it to the eventView
                 //Selects all the rows that have approved equaling one (or approved)
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["FFCP440Student"].ConnectionString);
-                string strSQL = "Select [Date], [Title], [Description], [Name] from Events where [Approved]=1";
+                string strSQL = "Select [ID], [Date], [Title], [Description], [Name] from Events where [Approved]=1";
                 SqlDataAdapter dt = new SqlDataAdapter(strSQL, con);
                 DataSet ds = new DataSet();
                 dt.Fill(ds, "UserDetail");
