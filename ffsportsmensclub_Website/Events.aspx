@@ -20,6 +20,7 @@
     </div>
 
     <%-- Trying out a repeater here to make it look a little nicer --%>
+    <div class="container">
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
             <div class="col-md-4">
@@ -32,6 +33,8 @@
            </div>
       </ItemTemplate>
     </asp:Repeater>
+        </div>
+
 
 <%--    <asp:LoginView ID="LoginView1" runat="server">
         <LoggedInTemplate>--%>
