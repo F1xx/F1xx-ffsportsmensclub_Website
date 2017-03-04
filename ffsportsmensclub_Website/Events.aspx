@@ -21,19 +21,19 @@
 
     <%-- Trying out a repeater here to make it look a little nicer --%>
     <div class="container">
-    <asp:Repeater ID="Repeater1" runat="server">
-        <ItemTemplate>
-            <div class="col-md-4">
-                <div class="eventBody" id="<%# DataBinder.Eval(Container.DataItem,"ID") %>">
-                    <h1 class="eventTitle"><%# DataBinder.Eval(Container.DataItem,"Title") %></h1>
-                    <h3 class="eventDate"><%# DataBinder.Eval(Container.DataItem,"Date") %></h3>
-                    <p class="eventInfo"><%# DataBinder.Eval(Container.DataItem,"Description") %></p>
-                    <p class="eventName">By: <%# DataBinder.Eval(Container.DataItem,"Name") %></p>
+        <asp:Repeater ID="Repeater1" runat="server">
+            <ItemTemplate>
+                <div class="col-md-4">
+                    <div class="eventBody" id="<%# DataBinder.Eval(Container.DataItem,"ID") %>">
+                        <h1 class="eventTitle"><%# DataBinder.Eval(Container.DataItem,"Title") %></h1>
+                        <h3 class="eventDate"><%# DataBinder.Eval(Container.DataItem,"Date") %></h3>
+                        <p class="eventInfo"><%# DataBinder.Eval(Container.DataItem,"Description") %></p>
+                        <p class="eventName">By: <%# DataBinder.Eval(Container.DataItem,"Name") %></p>
+                    </div>
                 </div>
-            </div>
-      </ItemTemplate>
-    </asp:Repeater>
-        </div>
+          </ItemTemplate>
+        </asp:Repeater>
+     </div>
 
 
     <asp:LoginView ID="LoginView1" runat="server">
