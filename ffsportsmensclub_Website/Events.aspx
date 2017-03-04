@@ -1,5 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="ffsportsmensclub_Website.Events" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <style>
+    .col-md-4 div:target{
+        background-color: #ffa;
+    }
+</style>
+
     <div class="container">
         <div class="jumbotron">
             <h1>Fort Frances Men&#39;s Club</h1>
@@ -21,6 +29,7 @@
 
     <%-- Trying out a repeater here to make it look a little nicer --%>
     <div class="container">
+        <div class="events">
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
             <div class="col-md-4">
@@ -33,6 +42,7 @@
             </div>
       </ItemTemplate>
     </asp:Repeater>
+            </div>
         </div>
 
 
