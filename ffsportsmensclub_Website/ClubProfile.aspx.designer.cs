@@ -7,9 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ffsportsmensclub_Website {
-    
-    
-    public partial class About {
+namespace ffsportsmensclub_Website
+{
+
+
+    public partial class ClubProfile
+    {
     }
 }
