@@ -42,18 +42,21 @@ namespace ffsportsmensclub_Website
         //Function to allow a logged in user to Delete submitted events
         protected void Delete_Click(object sender, EventArgs e)
         {
-            Queryer("DELETE FROM Events WHERE ID = @id", GridView1);
+            GridView gv = (GridView)LoginView1.FindControl("GridView1");
+            Queryer("DELETE FROM Events WHERE ID = @id", gv);
         }
 
         //Function to allow a logged in user to approve submitted events and add them to the events page and calendar
         protected void Approve_Click(object sender, EventArgs e)
         {
-            Queryer("UPDATE Events SET Approved = '1' WHERE ID = @id", GridView1);
+            GridView gv = (GridView)LoginView1.FindControl("GridView1");
+            Queryer("UPDATE Events SET Approved = '1' WHERE ID = @id", gv);
         }
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
-            Queryer("UPDATE Events SET Approved = '0' WHERE ID = @id", GridView2);
+            GridView gv = (GridView)LoginView1.FindControl("GridView2");
+            Queryer("UPDATE Events SET Approved = '0' WHERE ID = @id", gv);
         }
 
         //Main query function.  This will check the checkboxes on the gridview and apply a query to the database involving the checked rows.
