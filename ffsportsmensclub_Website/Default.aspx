@@ -2,14 +2,14 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Fort Frances Men&#39;s Club</h1>
+        <div class="jumbotron" id="homePage">
+            <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">Welcome to the Fort Frances Sportsmen's Club!</p>
              <p><a href="ClubProfile.aspx" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
             </div>
     </div>        
 
-    
+
 
     <div class="container">
         <%-- First row of text and functions for updating, completed for now --%>

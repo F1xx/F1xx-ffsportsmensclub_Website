@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="jumbotron">
-            <h1>Fort Frances Men&#39;s Club</h1>
+            <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">Performing Wildlife and Nature studies for the Northwestern Ontario Regions every year</p>
             </div>
     </div>  

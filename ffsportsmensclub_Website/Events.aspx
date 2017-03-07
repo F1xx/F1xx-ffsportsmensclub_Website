@@ -9,8 +9,8 @@
 </style>
 
     <div class="container">
-        <div class="jumbotron">
-            <h1>Fort Frances Men&#39;s Club</h1>
+        <div class="jumbotron" id="eventsPage">
+            <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">Welcome to the Events Page!</p>
             </div>
     </div>
