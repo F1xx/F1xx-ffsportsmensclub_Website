@@ -2,14 +2,14 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Fort Frances Men&#39;s Club</h1>
+        <div class="jumbotron" id="homePage">
+            <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">Welcome to the Fort Frances Sportsmen's Club!</p>
              <p><a href="ClubProfile.aspx" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
             </div>
     </div>        
 
-    
+
 
     <div class="container">
         <%-- First row of text and functions for updating, completed for now --%>
@@ -95,34 +95,44 @@
     <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started / added words here blah blah</h2>
+            <h2>Water Levels</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                ARE WATER LEVELS ON Rainy Lake, Namakan Lake or the Rainy River Important to You?
             </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+            <p>The IJC's Rule Curve Review Study Board is preparing to make its recommendations to the IJC, but wants to hear from you first!</p>
+            <ul>
+                <li>Public Information Meeting</li>
+                <li>November 2, 2016</li>
+                <li>7:00 - 9:00 p.m.</li>
+                <li>Fort Frances Library</li>
+                <li>601 Reid Ave, Fort Frances, ON</li>
+            </ul>
+            <p>The Study Board will make scientifically supported recommedations to the IJC for modifying or retaining the 2000 Rainy and Namakan Lakes rule curves. 
+                This public meeting is an opportunity to provide your input on a number of alternatives being considered.</p>
+            <p><a href="http://ijc.org/en_/RNLRCSB">International Rainy and Namakan Lakes Rule Curves Study Board</a></p>
         </div>
         <div class="col-md-4">
-            <h2>Getting started / added words here blah blah</h2>
+            <h2>RCMP PAL/ATT  information</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                Please remember that new ATT holders or new club members still need to take the clubs ATT/Safety Course  to use the club pistol range.
             </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+            <p>For more information on this please contact Willie Anderson 274-6702</p>
+            <p><a href="http://www.rcmp-grc.gc.ca/cfp-pcaf/notice-avis-2015-09-eng.htm">More Information Here</a></p>
+
         </div>
         <div class="col-md-4">
-            <h2>Getting started / added words here blah blah</h2>
+            <h2>Fort Frances Sportsmen's Club Bursaries</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                The Fort Frances Sportsmen's Club is offering a bursary of $1000.00 to two student's graduating from Fort Frances
+High School or Rainy River High School, who intends to pursue post‐secondary studies at a college or university.
             </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+            <p>The recipient or parents/guardians must be current members of the Fort Frances Sportsmen's Club.
+Preference will be given to a student who is planning on a career in forestry, environmental studies, or wildlife
+conservation.</p>
+            <p>The Sportsmen's Board of Directors, in consultation with present teachers, will choose the recipient.
+The bursary will be paid to the recipient upon successful completion of the first semester.</p>
+            <p>Applications for the Fort Frances Sportsmen's Club Bursary can be obtained by students at the Fort Frances High School.</p>
+
         </div>
     </div>
         </div>

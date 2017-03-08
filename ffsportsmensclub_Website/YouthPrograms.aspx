@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
-        <div class="jumbotron">
-            <h1>Youth Program's</h1>
+        <div class="jumbotron" id="youthPrograms">
+            <h1 class="titleText">Youth Programs</h1>
              <p class="lead">Find out what we do with today's youth!</p>
             </div>
     </div>       

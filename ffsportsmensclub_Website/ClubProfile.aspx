@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="jumbotron">
-            <h1>Fort Frances Men&#39;s Club</h1>
+            <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">What are we all about?</p>
             </div>
     </div>  

@@ -81,6 +81,39 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Useful Links</h6>
+                            <ul>
+                                <li><a href="http://www.ofah.org/">Ontario Federation of Anglers and Hunters</a></li>
+                                <li><a href="http://www.mnr.gov.on.ca/en/Business/FW/Publication/MNR_E001275P.html">Hunting Regulations</a></li>
+                                <li><a href="http://www.mnr.gov.on.ca/en/Business/LetsFish/2ColumnSubPage/STEL02_165338.html">Fishing Regulations</a></li>
+                                <li><a href="http://www.rainylakefisheriescharitytrust.com/">Rainy Lake Fisheries</a></li>
+                                <li><a href="https://www.facebook.com/ffsportsmensclub">Check us out on Facebook!</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Community Links</h6>
+                            <ul>
+                                <li><a href="http://www.perchlakebass.com/">Perch Lake Bass</a></li>
+                                <li><a href="http://www.canadianbass.com/">Canadian Bass</a></li>
+                                <li><a href="http://www.rainylakesports.com/">Rainy Lake Sports</a></li>
+                                <li><a href="http://www.gillons.on.ca/">Gillons Family Insurance</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6></h6>
+                            <ul>
+                                <li><a href="http://www.ofah.org/">Ontario Federation of Anglers and Hunters</a></li>
+                                <li><a href="http://www.mnr.gov.on.ca/en/Business/FW/Publication/MNR_E001275P.html">Hunting Regulations</a></li>
+                                <li><a href="http://www.mnr.gov.on.ca/en/Business/LetsFish/2ColumnSubPage/STEL02_165338.html">Fishing Regulations</a></li>
+                                <li><a href="http://www.rainylakefisheriescharitytrust.com/">Rainy Lake Fisheries</a></li>
+                                <li><a href="https://www.facebook.com/ffsportsmensclub">Check us out on Facebook!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <p>&copy; <%: DateTime.Now.Year %> - Fort Frances Sportsmen's Club</p>
             </footer>
         </div>
