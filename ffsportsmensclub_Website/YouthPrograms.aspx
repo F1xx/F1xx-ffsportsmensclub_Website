@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="YouthPrograms.aspx.cs" Inherits="ffsportsmensclub_Website.YouthPrograms" %>
+﻿<%@ Page Title="Youth Programs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="YouthPrograms.aspx.cs" Inherits="ffsportsmensclub_Website.YouthPrograms" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">

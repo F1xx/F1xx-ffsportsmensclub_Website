@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Club Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClubProfile.aspx.cs" Inherits="ffsportsmensclub_Website.ClubProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron" id="clubProfile">
             <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">What are we all about?</p>
             </div>
