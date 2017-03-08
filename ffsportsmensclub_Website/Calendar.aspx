@@ -16,10 +16,16 @@
     <div>
     <div class="col-md-12"> <!-- CALENDAR -->
 
+        <!--ACTUAL CALENDAR-->
+            <asp:Calendar ID="cldrEventCalendar" runat="server" Height="600px" ondayrender="cldrEventCalendar_DayRender" Width="1000px" CellPadding="5" CellSpacing="10" FirstDayOfWeek="Sunday" NextMonthText="Next" PrevMonthText="Previous">
+                <DayHeaderStyle BackColor="#E1E1E1" BorderColor="Gray" BorderStyle="Inset" BorderWidth="5px" Font-Bold="True" Font-Italic="False" Font-Size="Larger" Font-Strikeout="False" Font-Underline="False" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
+                <DayStyle BackColor="White" BorderColor="Black" BorderStyle="Solid" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
+                <SelectedDayStyle BackColor="#66CCFF" BorderStyle="Outset" BorderWidth="3px" Font-Bold="True" Font-Italic="True" HorizontalAlign="Center" VerticalAlign="Top" />
+                <TodayDayStyle BackColor="#FFFFCC" BorderStyle="Outset" BorderWidth="3px" Font-Bold="True" Font-Italic="True" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
+        </asp:Calendar>
+        <!--/ACTUAL CALENDAR-->
+
         <!--TEXTBOXES-->
-            <asp:Label ID="lblName" runat="server"><b>Your Name:</b></asp:Label><br />
-            <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
-            <asp:Label ID="nameWarning" visible="false" runat="server">*</asp:Label><br />
 
             <asp:Label ID="lblDate" runat="server"><b>Event Date:</b></asp:Label><br />
             <asp:TextBox ID="txtDate" runat="server" ReadOnly="True"></asp:TextBox>
@@ -29,9 +35,9 @@
             <asp:TextBox ID="txtEventTitle" runat="server"></asp:TextBox>
             <asp:Label ID="titleWarning" visible="false" runat="server">*</asp:Label><br />
 
-            <asp:Label ID="lblDesc" runat="server"><b>Event Description:</b></asp:Label><br />
-            <asp:TextBox ID="txtEventDescription" runat="server" Height="100px" TextMode="MultiLine" Width="500px"></asp:TextBox>
-            <asp:Label ID="descWarning" visible="false" runat="server">*</asp:Label><br />
+            <asp:Label ID="lblName" runat="server"><b>Your Name:</b></asp:Label><br />
+            <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+            <asp:Label ID="nameWarning" visible="false" runat="server">*</asp:Label><br />
 
             <asp:Label ID="lblEmail" runat="server"><b>Your Email:</b></asp:Label><br />
             <asp:TextBox ID="txtUserEmail" runat="server"></asp:TextBox>
@@ -41,17 +47,13 @@
             <asp:TextBox ID="txtUserPhone" runat="server"></asp:TextBox>
             <asp:Label ID="phoneWarning" visible="false" runat="server">*</asp:Label><br />
 
+            <asp:Label ID="lblDesc" runat="server"><b>Event Description:</b></asp:Label><br />
+            <asp:TextBox ID="txtEventDescription" runat="server" Height="100px" TextMode="MultiLine" Width="500px"></asp:TextBox>
+            <asp:Label ID="descWarning" visible="false" runat="server">*</asp:Label><br />
+
             <asp:Button ID="cmdCreate" runat="server" Text="Create Event" onclick="cmdCreate_Click" /><br />
         <!--/TEXTBOXES-->
 
-        <!--ACTUAL CALENDAR-->
-            <asp:Calendar ID="cldrEventCalendar" runat="server" Height="600px" ondayrender="cldrEventCalendar_DayRender" Width="1000px" CellPadding="5" CellSpacing="10" FirstDayOfWeek="Sunday" NextMonthText="Next" PrevMonthText="Previous">
-                <DayHeaderStyle BackColor="#E1E1E1" BorderColor="Gray" BorderStyle="Inset" BorderWidth="5px" Font-Bold="True" Font-Italic="False" Font-Size="Larger" Font-Strikeout="False" Font-Underline="False" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
-                <DayStyle BackColor="White" BorderColor="Black" BorderStyle="Solid" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
-                <SelectedDayStyle BackColor="#66CCFF" BorderStyle="Outset" BorderWidth="3px" Font-Bold="True" Font-Italic="True" HorizontalAlign="Center" VerticalAlign="Top" />
-                <TodayDayStyle BackColor="#FFFFCC" BorderStyle="Outset" BorderWidth="3px" Font-Bold="True" Font-Italic="True" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Top" />
-        </asp:Calendar>
-        <!--/ACTUAL CALENDAR-->
         </div>
     </div>
 
