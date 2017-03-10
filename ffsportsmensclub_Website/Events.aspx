@@ -17,7 +17,9 @@
 
     <div class="container">
         <div class="row">
+            <div class="addABorder">
             <h1>Currently Approved Events</h1>
+                </div>
             <div class="col-md-12">
                 <p>Here you can see all of the approved events we currently have going on in the organization! 
                     You can see what the event is, where it'll be and when, and a brief description telling you what it's all about! 
@@ -34,7 +36,9 @@
         <ItemTemplate>
             <div class="col-md-4">
                 <div class="eventBody" id="<%# DataBinder.Eval(Container.DataItem,"ID") %>">
+                    <div class="addABorder">
                     <h1 class="eventTitle"><%# DataBinder.Eval(Container.DataItem,"Title") %></h1>
+                    </div>
                     <h3 class="eventDate"><%# DataBinder.Eval(Container.DataItem,"Date", "{0:D}") %></h3>
                     <p class="eventInfo"><%# DataBinder.Eval(Container.DataItem,"Description") %></p>
                     <p class="eventName">By: <%# DataBinder.Eval(Container.DataItem,"Name") %></p>

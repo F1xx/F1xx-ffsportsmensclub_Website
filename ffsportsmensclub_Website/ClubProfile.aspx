@@ -10,7 +10,9 @@
     <div class="container">
         <div class="row">
             <div class ="col-md-12">
+                <div class="addABorder">
                 <h2>Club Profile</h2>
+                    </div>
                 <p>"I give my pledge as a Canadian, to save and faithfully defend from waste, the natural resource of my country, its soils and minerals, its air, water, forests and wildlife"</p>
             </div>
         </div>
@@ -18,9 +20,12 @@
 
     <div class="container">
         <div class="page-header">
-            The Objectives of the Club:
+            <div class="addABorder">
+            <h2>The Objectives of the Club:</h2>
+                </div>
         </div>
     </div>
+
 
     <div class="container">
         <div class="col-md-12">
@@ -44,7 +49,9 @@
 
     <div class="container">
         <div class="page-header">
-            2016/17 Board of Directors
+            <div class="addABorder">
+            <h2>2016/17 Board of Directors</h2>
+                </div>
         </div>
     </div>
 
@@ -87,7 +94,9 @@
 
     <div class="container">
         <div class="page-header">
-            2015/16 Committees
+            <div class="addABorder">
+            <h2>2015/16 Committees</h2>
+                </div>
         </div>
     </div>
 

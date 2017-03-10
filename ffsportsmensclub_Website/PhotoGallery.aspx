@@ -15,17 +15,17 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/Archery/archery1.jpg" alt="An archery image" />
+                <img class="img-thumbnail" src="Images/Archery/archery1.jpg" alt="An archery image" />
             </div>
         
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/Archery/archery2.jpg" alt="An archery image" />
+                <img class="img-thumbnail" src="Images/Archery/archery2.jpg" alt="An archery image" />
             </div>
         
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/Archery/skeet1.jpg" alt="A skeet image" />
+                <img class="img-thumbnail" src="Images/Archery/skeet1.jpg" alt="A skeet image" />
             </div>
         
 
@@ -41,39 +41,39 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club1.JPG" alt="Club Meeting" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club1.JPG" alt="Club Meeting" />
             </div>
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club2.JPG" alt="Archery Lessons" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club2.JPG" alt="Archery Lessons" />
             </div>
 
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club3.JPG" alt="Hunting" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club3.JPG" alt="Hunting" />
             </div>
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club4.JPG" alt="Hunting" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club4.JPG" alt="Hunting" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club5.JPG" alt="Hunting" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club5.JPG" alt="Hunting" />
             </div>
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club6.JPG" alt="Blue Bird Eggs" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club6.JPG" alt="Blue Bird Eggs" />
             </div>
 
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club7.JPG" alt="Fort Canadian Bass Championship" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club7.JPG" alt="Fort Canadian Bass Championship" />
             </div>
 
             <div class="col-md-3">
-                <img class="img-responsive" src="Images/ClubGallery/club8.JPG" alt="Henry Miller Getting an Award" />
+                <img class="img-thumbnail" src="Images/ClubGallery/club8.JPG" alt="Henry Miller Getting an Award" />
             </div>
         </div>
     </div>

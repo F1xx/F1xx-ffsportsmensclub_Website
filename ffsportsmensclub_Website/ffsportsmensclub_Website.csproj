@@ -235,6 +235,7 @@
     <Content Include="Images\ClubPrograms\cougar.jpg" />
     <Content Include="Images\ClubPrograms\logging.jpg" />
     <Content Include="Images\ClubPrograms\moose.jpg" />
+    <Content Include="Images\himage.png" />
     <Content Include="Images\TitleImages\beaverdam.jpg" />
     <Content Include="Images\TitleImages\huntingdog.jpg" />
     <Content Include="Images\TitleImages\logo1.bmp" />
