@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClubPrograms.aspx.cs" Inherits="ffsportsmensclub_Website.Contact" %>
+﻿<%@ Page Title="Club Programs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClubPrograms.aspx.cs" Inherits="ffsportsmensclub_Website.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Fort Frances Men&#39;s Club</h1>
+        <div class="jumbotron" id="clubPrograms">
+            <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">Performing Wildlife and Nature studies for the Northwestern Ontario Regions every year</p>
             </div>
     </div>  
@@ -11,7 +11,9 @@
     <div class="container">
 <div class="row">
     <div class="col-md-6">
+        <div class="addABorder">
         <h2>Who we are</h2>
+            </div>
         <p>
             Welcome to the Fort Frances Sportsmen's Club. Our property is 
             located on Frog Creek road. Our ranges consist of a Handgun Range, 
@@ -22,7 +24,9 @@
         </p>
     </div>
     <div class="col-md-6">
+        <div class="addABorder">
         <h2>What we've done</h2>
+            </div>
         <p>
             We are involved in so many activities throughout the community and 
             with our youth, and we are proud of it! If you look below, you can find an overview 
@@ -44,7 +48,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="addABorder">
                 <h3>Skeet</h3>
+                    </div>
 
                 <p>Skeet has a long-standing history at the Fort Frances Sportsmen's Club range at Frog Creek, 
                     and still has a dedicated group of shooters who hit the range on Tuesday nights to aim at targets 
@@ -66,13 +72,17 @@
         
         <div class="row">
             <div class="col-md-4">
+                <div class="addABorder">
                 <h3>Archery</h3>
+                    </div>
 
                 <p>The club meets on Mondays and Wednesdays at 6:30pm. Two instructors are available if anyone is interested in learning archery. 
                     Contact Blair Beadow at 274-9889.</p>
             </div>
             <div class="col-md-4">
+                <div class="addABorder">
                 <h3>Rifle</h3>
+                    </div>
 
                 <p>The rifle range is open to club members. It has berms at 50 yards, 100 yards and 200 yards. 
                     It's a great place to teach the novice shooter in a safe environment. Also a great place to try-out 
@@ -81,7 +91,9 @@
                 <p>The range office is Willy Anderson and can be contacted at 274-6702.</p>
             </div>
             <div class="col-md-4">
+                <div class="addABorder">
                 <h3>Handguns</h3>
+                    </div>
 
                 <p>HANDGUN  RANGE  USERS Prior  to  September  2,  2015,  the  Ontario  Chief  Firearms  Office  (CFO)  
                     required  members to  take  a  Club  Level  Handgun  Safety  Course  in  order  to  obtain  a  long  
@@ -111,8 +123,13 @@
  <div class="container">
  <div class="row">
     <div class="col-md-12">
-        <div class="col-md-9">
+
+            <div class="addABorder">
             <h3>Hare Study</h3>
+                </div>
+        <div class="col-md-3">
+            <img src="Images/hare.jpg" class="img-thumbnail" alt="Hare being shown" />
+        </div>
             <p>Purpose: To monitor hare populations and use this as an indicator for predator populations (lynx) as well.</p>
 
             <p>We have applied for funds to continue this project for the 4th year. It initially involved setting up 
@@ -121,17 +138,17 @@
             for the following year. This is alot more fun than it sounds. If you aren't involved in scatology you should be!</p>
 
             <p>Data is turned in to the MNR, who include it in their provincial data summary.</p>
-        </div>
-        <div class="col-md-3">
-            <img src="Images/hare.jpg" class="img-responsive" alt="Hare being shown" />
-        </div>
     </div>
 </div>
 
      <div class="row">
     <div class="col-md-12">
-        <div class="col-md-9">
+        <div class="addABorder">
             <h3>Cougar Watch</h3>
+            </div>
+            <div class="col-md-3">
+            <img src="Images/ClubPrograms/cougar.jpg" class="img-thumbnail" alt="Cougar being shown" />
+        </div>
             <p>Purpose: To gather evidence of the presence of a wild cougar population in Ontario.</p>
 
             <p>We are entering our 3rd year with this province-wide program. We wait for a reliable sighting 
@@ -145,17 +162,18 @@
 
             <p>In 2008 one photo, identified as "it could only be a cougar" by experts in Canada and the U.S., was taken by a program camera. 
                 The program relies on a great deal of chance, but as it grows we may get more positive results.</p>
-        </div>
-        <div class="col-md-3">
-            <img src="Images/hare.jpg" class="img-responsive" alt="Hare being shown" />
-        </div>
     </div>
 </div>
 
      <div class="row">
     <div class="col-md-12">
-        <div class="col-md-9">
+
+            <div class="addABorder">
             <h3>Seeding Logging Roads</h3>
+                </div>
+            <div class="col-md-3">
+            <img src="Images/ClubPrograms/logging.jpg" class="img-thumbnail" alt="Logging Road Depicted" />
+        </div>
             <p>The seeding project was organized by Jeff Johnston and Ben Wiersema.</p>
 
             <p>Abitibi Bowater was contacted, maps were obtained, seed ordered and records kept of the number of kilometres traveled and the number of kilometres seeded.</p>
@@ -164,17 +182,17 @@
                 It took several days to complete the job as the roads to be sown were scattered throughout the Crossroute Forest.</p>
 
             <p>Len Noonan, Henry Miller and Richard Boileau assisted Johnston on different days. Eighty-two kilometres were seeded.</p>
-        </div>
-        <div class="col-md-3">
-            <img src="Images/hare.jpg" class="img-responsive" alt="Hare being shown" />
-        </div>
     </div>
 </div>
 
      <div class="row">
     <div class="col-md-12">
-        <div class="col-md-9">
+        <div class="addABorder">
             <h3>Moose Management Review</h3>
+            </div>
+                <div class="col-md-3">
+                    <img src="Images/ClubPrograms/moose.jpg" class="img-thumbnail" alt="Moose being shown" />
+                </div>
             <p>Last summer the MNR announced a review of the provinces moose management program. Meetings were held to review these programs. 
                 One of the meetings, held in Dryden, brought together hungers from around the area.</p>
 
@@ -192,10 +210,6 @@
 
             <p>Broader consultation is planned in 2009.</p>
         </div>
-        <div class="col-md-3">
-            <img src="Images/hare.jpg" class="img-responsive" alt="Hare being shown" />
-        </div>
-    </div>
 </div>
      </div>
 </asp:Content>
