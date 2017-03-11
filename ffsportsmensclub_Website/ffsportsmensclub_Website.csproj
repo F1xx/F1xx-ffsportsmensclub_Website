@@ -228,10 +228,22 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Account\Web.config" />
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\ClubPrograms\cougar.jpg" />
+    <Content Include="Images\ClubPrograms\logging.jpg" />
+    <Content Include="Images\ClubPrograms\moose.jpg" />
+    <Content Include="Images\himage.png" />
+    <Content Include="Images\TitleImages\beaverdam.jpg" />
+    <Content Include="Images\TitleImages\huntingdog.jpg" />
+    <Content Include="Images\TitleImages\logo1.bmp" />
+    <Content Include="Images\TitleImages\rainylakesunrise.jpg" />
+    <Content Include="Images\TitleImages\rainyriver.jpg" />
+    <Content Include="Images\TitleImages\winterforest.jpg" />
     <Content Include="YouthPrograms.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\Archery\archery1.jpg" />

@@ -36,3 +36,12 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+.addABorder{ 
+    border-bottom: thick dotted darkgreen;
+    border-bottom-style: solid;
+}
+
+footer{
+       
+}
