@@ -2,6 +2,13 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+        <div class="jumbotron" id="calendarPage">
+            <h1 class="titleText">Calendar</h1>
+             <p class="lead">Welcome to the Booking Area!</p>
+            </div>
+    </div>        
+
+    <div class="container">
     <div class="col-md-12">
             <h2>Wanting to go ahead and book something?</h2>
             <p>
