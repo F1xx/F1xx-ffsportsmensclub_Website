@@ -42,7 +42,7 @@ namespace ffsportsmensclub_Website
             using (SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FFCP440Student"].ConnectionString))
             {
                 SqlCommand sqlComm = new SqlCommand(sqlString, Conn);
-
+                 
                 //open the connection
                 Conn.Open();
                 //create the reader inside this connection

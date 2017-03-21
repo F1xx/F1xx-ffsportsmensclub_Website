@@ -6839,3 +6839,21 @@ td.visible-print {
     background-repeat:no-repeat;
     background-size: 100%;
 }
+
+#clubProfile{
+    background-image:url("../Images/TitleImages/rainylakesunrise.jpg");
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
+
+#clubPrograms{
+    background-image:url("../Images/TitleImages/huntingdog.jpg");
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
+
+#calendarPage{
+    background-image:url("../Images/TitleImages/rainyriver.jpg");
+    background-repeat:no-repeat;
+    background-size: 100%;
+}

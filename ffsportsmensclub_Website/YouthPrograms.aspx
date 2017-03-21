@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="YouthPrograms.aspx.cs" Inherits="ffsportsmensclub_Website.YouthPrograms" %>
+﻿<%@ Page Title="Youth Programs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="YouthPrograms.aspx.cs" Inherits="ffsportsmensclub_Website.YouthPrograms" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
@@ -10,7 +10,9 @@
 
     <div class="container">
         <div class="page-header">
-            Youth Programs
+            <div class="addABorder">
+            <h2>Youth Programs</h2>
+                </div>
         </div>
     </div>
 
@@ -26,7 +28,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="page-header">
-                    Get Outdoors Club
+                    <div class="addABorder">
+                    <h2>Get Outdoors Club</h2>
+                        </div>
                 </div>
                 <span style="font-style: italic">Find YOUR place in the outdoors!</span>
                 <p>O.F.A.H. Get Outdoors is a national award winning, youth conservation and leadership program, 
@@ -38,7 +42,9 @@
             </div>
             <div class="col-md-6">
                 <div class="page-header">
-                    Youth Education and Conservation in the Schools
+                    <div class="addABorder">
+                    <h2>Youth Education and Conservation in the Schools</h2>
+                        </div>
                 </div>
                 <p>The purpose of the programs in the schools is to give pupils an opportunity to become active in conservation of wildlife.  Building birdhouses, 
                     putting them in appropriate habitats, and monitoring them gives pupils a chance to help bluebirds and tree swallows by providing nesting cavities.</p>
@@ -55,7 +61,9 @@
 
     <div class="container">
         <div class="page-header">
-            Blue Bird Project - 2015
+            <div class="addABorder">
+            <h2>Blue Bird Project - 2015</h2>
+                </div>
         </div>
     </div>
 
