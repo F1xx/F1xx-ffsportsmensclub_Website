@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron" id="photoPage">
             <h1 class="titleText">Fort Frances Men&#39;s Club</h1>
              <p class="lead">Welcome to the Fort Frances Sportsmen's Club!</p>
              <p>Check out some of the fun we've had below!</p>
