@@ -6857,3 +6857,9 @@ td.visible-print {
     background-repeat:no-repeat;
     background-size: 100%;
 }
+
+#photoPage{
+    background-image:url("../Images/TitleImages/rainylakesunrise.jpg");
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
