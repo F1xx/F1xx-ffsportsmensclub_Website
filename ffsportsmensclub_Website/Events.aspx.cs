@@ -53,6 +53,7 @@ namespace ffsportsmensclub_Website
             Queryer("UPDATE Events SET Approved = '1' WHERE ID = @id", gv);
         }
 
+        //Function to allow a logged in user to cancel approved events and remove them from the events page and calendar
         protected void Cancel_Click(object sender, EventArgs e)
         {
             GridView gv = (GridView)LoginView1.FindControl("GridView2");
