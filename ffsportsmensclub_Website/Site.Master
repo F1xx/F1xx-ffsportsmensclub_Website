@@ -50,10 +50,13 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Club Information <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a runat="server" href="~/ClubProfile.aspx">Club Profile</a></li>
+                            <li><a runat="server" href="~/ClubPrograms.aspx">Club Programs</a></li>
+                            <li><a runat="server" href="~/YouthPrograms.aspx">Youth Programs</a></li>
+                            </ul>
                         <li><a runat="server" href="~/Calendar">Calendar</a></li>
-                        <li><a runat="server" href="~/ClubProfile.aspx" >Club Profile</a></li>
-                        <li><a runat="server" href="~/ClubPrograms.aspx">Club Programs</a></li>
-                        <li><a runat="server" href="~/YouthPrograms.aspx">Youth Programs</a></li>
                         <li><a runat="server" href="~/Events.aspx">Events</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
