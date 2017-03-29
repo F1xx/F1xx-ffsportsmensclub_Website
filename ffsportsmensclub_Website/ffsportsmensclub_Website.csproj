@@ -218,6 +218,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="ClubFacilities.aspx" />
     <Content Include="ClubProfile.aspx" />
     <Content Include="ClubPrograms.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -244,7 +245,10 @@
     <Content Include="Images\TitleImages\rainylakesunrise.jpg" />
     <Content Include="Images\TitleImages\rainyriver.jpg" />
     <Content Include="Images\TitleImages\winterforest.jpg" />
+    <Content Include="Membership.aspx" />
     <Content Include="YouthPrograms.aspx" />
+    <Content Include="Documents\membership.pdf" />
+    <Content Include="Documents\Newsletter.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\Archery\archery1.jpg" />
     <Content Include="Images\Archery\archery2.jpg" />
@@ -440,6 +444,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="ClubFacilities.aspx.cs">
+      <DependentUpon>ClubFacilities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClubFacilities.aspx.designer.cs">
+      <DependentUpon>ClubFacilities.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClubProfile.aspx.cs">
       <DependentUpon>ClubProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -470,6 +481,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Membership.aspx.cs">
+      <DependentUpon>Membership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Membership.aspx.designer.cs">
+      <DependentUpon>Membership.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="PhotoGallery.aspx.cs">
