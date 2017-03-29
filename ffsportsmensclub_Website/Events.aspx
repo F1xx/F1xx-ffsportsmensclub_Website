@@ -32,6 +32,7 @@
     <%-- Trying out a repeater here to make it look a little nicer --%>
     <div class="container">
         <div class="events">
+            <div class="row">
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
             <div class="col-md-4">
@@ -46,6 +47,7 @@
             </div>
       </ItemTemplate>
     </asp:Repeater>
+                </div>
             </div>
         </div>
 
