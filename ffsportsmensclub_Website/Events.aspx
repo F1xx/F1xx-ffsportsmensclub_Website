@@ -60,6 +60,13 @@
             <br />
             <br />
             <hr />
+            <div class="container">
+        <div class="page-header">
+            <div class="addABorder">
+            <h2>Pending Events</h2>
+                </div>
+        </div>
+    </div>
             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" CellPadding="12" CellSpacing="20">
                 <Columns>
                     <asp:TemplateField>
@@ -76,6 +83,13 @@
 
             <br />
             <hr />
+            <div class="container">
+        <div class="page-header">
+            <div class="addABorder">
+            <h2>Manage Events</h2>
+                </div>
+        </div>
+    </div>
             <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSource2" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" CellPadding="12" CellSpacing="20">
                 <Columns>
                     <asp:TemplateField>
